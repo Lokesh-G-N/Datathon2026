@@ -5,8 +5,15 @@ import { Phone, User, GraduationCap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const staffCoordinators = [
-    { name: "Staff Coordinator 1", role: "Faculty Advisor", phone: "+91 XXXXXXXXXX" },
-    { name: "Staff Coordinator 2", role: "Event Lead", phone: "+91 XXXXXXXXXX" }
+    { name: "Dr.D.Sudha Devi", role: "Event Ideation & Concept Lead / Food & Hospitality", phone: "+91 98944 54045" },
+    { name: "Dr.J.Rathika", role: "Event Coordinator / Inauguration & Validation", phone: "+91 96290 59808" },
+    { name: "Dr.M.Marimuthu", role: "Event Coordinator / Inauguration & Validation", phone: "+91 98940 62167" },
+    { name: "Dr.S.Gayathri Devi", role: "Judging & Jury Coordinator", phone: "+91 99445 61345" },
+    { name: "Dr.K.Rajarajeshwari", role: "Sponsorship & Finance Coordinator", phone: "+91 97916 77644" },
+    { name: "Dr.M.Srividya", role: "Inauguration and Validation Lead", phone: "+91 98651 89542" },
+    { name: "Ms.S.Deivarani", role: "Registration & Participant Management", phone: "+91 94866 24020" },
+    { name: "Ms.K.H.Vani", role: "Registration & Participant Management", phone: "+91 98439 32496" },
+    { name: "Dr.P.Velvadivu", role: "Food & Hospitality Coordinator", phone: "Contact via Office" }
 ];
 
 const studentCoordinators = [
@@ -34,13 +41,20 @@ function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' 
                     </div>
                 </div>
 
-                <a
-                    href={`tel:${person.phone.replace(/\s/g, '')}`}
-                    className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-300"
-                >
-                    <Phone className="w-4 h-4 text-blue-500 group-hover:text-white" />
-                    <span className="text-sm font-bold text-white tracking-widest">{person.phone}</span>
-                </a>
+                {person.phone.match(/\d/) ? (
+                    <a
+                        href={`tel:${person.phone.replace(/\s/g, '')}`}
+                        className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-300"
+                    >
+                        <Phone className="w-4 h-4 text-blue-500 group-hover:text-white" />
+                        <span className="text-sm font-bold text-white tracking-widest">{person.phone}</span>
+                    </a>
+                ) : (
+                    <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/5 border border-white/5">
+                        <Phone className="w-4 h-4 text-slate-500" />
+                        <span className="text-sm font-bold text-slate-400 tracking-widest">{person.phone}</span>
+                    </div>
+                )}
             </Card>
         </motion.div>
     );
@@ -69,7 +83,7 @@ export default function Coordinators() {
                             <h3 className="text-xs font-black text-blue-500 uppercase tracking-[0.5em] whitespace-nowrap">Faculty Oversight</h3>
                             <div className="h-[1px] flex-1 bg-blue-500/20" />
                         </div>
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {staffCoordinators.map((staff, i) => (
                                 <ContactCard key={i} person={staff} type="staff" />
                             ))}
