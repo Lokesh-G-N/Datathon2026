@@ -75,7 +75,7 @@ export default function Navbar() {
             asChild
             className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-4 py-3 md:px-8 md:py-6 text-[10px] md:text-sm h-auto transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] border-none relative overflow-hidden group"
           >
-            <a href="https://forms.google.com/placeholder" target="_blank">
+            <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank">
               <span className="relative z-10">Register Now</span>
               {/* Scanning Light Beam */}
               <motion.div

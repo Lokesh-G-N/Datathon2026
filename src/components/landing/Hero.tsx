@@ -83,7 +83,7 @@ export default function Hero() {
                         {/* Deadline Banner */}
                         <div className="relative px-8 py-4 rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
                             <span className="text-red-500 font-black text-xl md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
-                                Register before Feb 24th
+                                Register before Feb 27th
                             </span>
                         </div>
                     </motion.div>
@@ -99,7 +99,7 @@ export default function Hero() {
                             asChild
                             className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-12 py-8 h-auto text-lg transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)] border-none relative overflow-hidden group"
                         >
-                            <a href="https://forms.google.com/placeholder" target="_blank">
+                            <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank">
                                 <span className="relative z-10">Register Now</span>
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                             </a>

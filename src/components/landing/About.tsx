@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Info, Landmark, Cpu } from "lucide-react";
+import { BookOpen, Landmark, Cpu } from "lucide-react";
 
 const aboutData = {
     event: {
@@ -19,7 +19,7 @@ const aboutData = {
     },
     department: {
         title: "About M.Sc. Data Science",
-        icon: <Info className="w-6 h-6" />,
+        icon: <BookOpen className="w-6 h-6" />,
         content: "M.Sc. Data Science is a specialized program focused on data analytics and intelligent decision-making. It builds a strong foundation in computer science, statistics, and data engineering. Students learn to analyze large datasets using machine learning and analytical techniques. The curriculum emphasizes hands-on laboratory work and real-world case studies. The program develops problem-solving, analytical, and innovation skills, preparing graduates for careers as Data Scientists, Data Analysts, and ML Engineers."
     }
 };
@@ -63,7 +63,7 @@ export default function About() {
                         </TabsTrigger>
                         <TabsTrigger value="department" className="relative py-4 rounded-xl data-[state=active]:text-white data-[state=active]:bg-white/5 transition-all flex items-center gap-3">
                             <span className={`p-2 rounded-lg ${activeTab === 'department' ? 'bg-blue-500/20 text-blue-400' : 'text-slate-500'}`}>
-                                <Info className="w-5 h-5" />
+                                <BookOpen className="w-5 h-5" />
                             </span>
                             <span className="font-bold uppercase tracking-widest text-xs hidden md:block">Department</span>
                         </TabsTrigger>
@@ -98,9 +98,6 @@ export default function About() {
                                                 </div>
 
                                                 <div className="w-full lg:w-48 h-full flex flex-row lg:flex-col gap-4">
-                                                    <div className="flex-1 bg-white/5 border border-white/10 rounded-3xl p-6 flex items-center justify-center">
-                                                        <div className="w-12 h-12 rounded-full border-4 border-blue-500/20 border-t-blue-500 animate-spin" />
-                                                    </div>
                                                 </div>
                                             </div>
                                         </CardContent>

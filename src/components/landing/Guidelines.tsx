@@ -107,10 +107,43 @@ export default function Guidelines() {
                     </div>
                     <div className="p-8 border border-blue-500/20 bg-blue-500/5 backdrop-blur-md rounded-3xl text-center">
                         <p className="text-[10px] text-blue-400/60 font-black tracking-widest uppercase mb-2">Deadline</p>
-                        <p className="text-3xl font-black text-white italic">24th Feb 2026</p>
+                        <p className="text-3xl font-black text-white italic">27th Feb 2026</p>
                         <p className="text-xs text-blue-400/40 mt-2">Final Registration Protocol</p>
                     </div>
                 </div>
+
+                {/* Facilities & Meals */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mt-20 p-8 md:p-12 border border-white/5 bg-black/40 backdrop-blur-3xl rounded-[2.5rem] relative overflow-hidden"
+                >
+                    <h3 className="text-2xl md:text-4xl font-black text-white mb-10 uppercase italic tracking-tighter">
+                        Facilities & <span className="text-blue-500">Meals</span>
+                    </h3>
+
+                    <div className="grid md:grid-cols-2 gap-10">
+                        <div className="space-y-4">
+                            <h4 className="text-blue-400 font-black uppercase tracking-widest text-[10px]">Day 1 - 14th March</h4>
+                            <ul className="space-y-2 text-slate-400 font-bold uppercase tracking-wide text-[10px]">
+                                <li className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">Lunch</li>
+                                <li className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">Evening Refreshments</li>
+                                <li className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">Dinner</li>
+                                <li className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-blue-400/80">Midnight Refreshments</li>
+                            </ul>
+                        </div>
+                        <div className="space-y-4">
+                            <h4 className="text-blue-400 font-black uppercase tracking-widest text-[10px]">Day 2 - 15th March</h4>
+                            <ul className="space-y-2 text-slate-400 font-bold uppercase tracking-wide text-[10px]">
+                                <li className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5">Breakfast</li>
+                            </ul>
+                            <div className="mt-6 p-5 rounded-2xl bg-red-500/5 border border-red-500/20 text-red-500 font-black uppercase tracking-[0.2em] text-[10px] text-center">
+                                No Accommodation Provided
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
 
                 {/* Section Warning Overlay */}
                 <div className="mt-20 p-8 border border-red-900/20 bg-red-900/5 backdrop-blur-md rounded-3xl text-center">
