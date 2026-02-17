@@ -114,113 +114,56 @@ export default function ProblemStatements() {
                     className="max-w-4xl mx-auto text-center mb-20"
                 >
                     <h2 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter uppercase italic">
-                        The <span className="text-blue-500 text-glow">Databank</span>
+                        Problem <span className="text-blue-500 text-glow">Statements</span>
                     </h2>
                 </motion.div>
 
-                <div className="flex flex-col lg:flex-row gap-8 h-[800px] md:h-[600px]">
-                    {/* Sidebar - Problem List */}
-                    <div className="lg:w-1/3 w-full flex flex-col h-full">
-                        <div className="p-4 bg-blue-500/10 border-t border-x border-blue-500/20 rounded-t-2xl flex items-center justify-between">
-                            <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest">Active Dossiers</span>
-                            <Database className="w-3 h-3 text-blue-500" />
+                <div className="flex flex-col items-center justify-center min-h-[400px] relative">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="w-full max-w-2xl bg-black/40 border border-white/5 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group"
+                    >
+                        {/* Digital Scanline Effect */}
+                        <motion.div
+                            animate={{ y: ["-100%", "500%"] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                            className="absolute left-0 right-0 h-[1px] bg-blue-500/10 z-0 pointer-events-none"
+                        />
+
+                        <div className="relative z-10 flex flex-col items-center gap-8">
+                            <div className="p-4 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 animate-pulse">
+                                <Shield className="w-12 h-12" />
+                            </div>
+
+                            <div className="space-y-4">
+                                <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.5em]">Data Encryption Enabled</p>
+                                <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-tight">
+                                    Problems <br />
+                                    <span className="text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">Released Soon</span>
+                                </h3>
+                            </div>
+
+                            <p className="text-lg md:text-xl text-slate-400 font-light italic max-w-md">
+                                The high-priority problem statements will be decrypted shortly.
+                            </p>
                         </div>
-                        <div className="flex-1 overflow-y-auto bg-black/40 border border-white/5 backdrop-blur-xl rounded-b-2xl custom-scrollbar p-2 space-y-2">
-                            {problems.map((prob, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setActiveIdx(i)}
-                                    className={`w-full text-left p-4 rounded-xl transition-all duration-300 flex items-center gap-4 group ${activeIdx === i
-                                            ? "bg-blue-600 text-white shadow-[0_0_20px_rgba(59,130,246,0.3)]"
-                                            : "hover:bg-white/5 text-slate-500"
-                                        }`}
-                                >
-                                    <span className={`text-[10px] font-mono ${activeIdx === i ? "text-blue-200" : "text-slate-700"}`}>
-                                        {String(i + 1).padStart(2, '0')}
-                                    </span>
-                                    <span className="font-bold uppercase tracking-tight text-xs truncate">
-                                        {prob.title}
-                                    </span>
-                                    {activeIdx === i && (
-                                        <motion.div layoutId="activeDot" className="w-1.5 h-1.5 rounded-full bg-white ml-auto" />
-                                    )}
-                                </button>
-                            ))}
+
+                        {/* Corner Decals */}
+                        <div className="absolute top-0 right-0 p-8 flex gap-2 opacity-20">
+                            <div className="w-1 h-8 bg-blue-500" />
+                            <div className="w-1 h-4 bg-blue-500" />
                         </div>
-                    </div>
+                        <div className="absolute bottom-0 left-0 p-8 flex gap-2 opacity-20">
+                            <div className="w-1 h-4 bg-blue-500" />
+                            <div className="w-1 h-8 bg-blue-500" />
+                        </div>
+                    </motion.div>
 
-                    {/* Content Panel - Problem Details */}
-                    <div className="lg:w-2/3 w-full h-full relative group">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeIdx}
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
-                                className="h-full bg-black/40 border border-white/5 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-16 flex flex-col relative overflow-hidden"
-                            >
-                                {/* Digital Scanline Effect */}
-                                <motion.div
-                                    animate={{ y: ["-100%", "500%"] }}
-                                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                                    className="absolute left-0 right-0 h-[1px] bg-blue-500/10 z-0 pointer-events-none"
-                                />
-
-                                <div className="relative z-10 flex flex-col h-full">
-                                    <div className="flex items-center gap-4 mb-8">
-                                        <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-500">
-                                            <Terminal className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-black text-blue-500/60 uppercase tracking-[0.3em]">Accessing Dossier</p>
-                                            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase italic leading-none">
-                                                {problems[activeIdx].title}
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex-1">
-                                        <div className="flex gap-4 mb-8">
-                                            {problems[activeIdx].tags.map(tag => (
-                                                <Badge key={tag} className="bg-blue-500/5 hover:bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
-                                                    {tag}
-                                                </Badge>
-                                            ))}
-                                        </div>
-
-                                        <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light italic border-l-2 border-blue-500/30 pl-8">
-                                            "{problems[activeIdx].desc}"
-                                        </p>
-                                    </div>
-
-                                    <div className="mt-12 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-3 gap-6">
-                                        <div className="space-y-1">
-                                            <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Priority</span>
-                                            <div className="flex gap-1">
-                                                {[1, 2, 3].map(bit => (
-                                                    <div key={bit} className="w-4 h-1 rounded-full bg-blue-500" />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="space-y-1">
-                                            <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Risk Level</span>
-                                            <span className="block text-xs font-bold text-white uppercase italic tracking-tighter text-blue-400">Low Exposure</span>
-                                        </div>
-                                        <div className="hidden md:block space-y-1">
-                                            <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">Complexity</span>
-                                            <span className="block text-xs font-bold text-white uppercase italic tracking-tighter">Class A-IX</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Corner Decals */}
-                                <div className="absolute top-0 right-0 p-8 flex gap-2 opacity-20">
-                                    <div className="w-1 h-8 bg-blue-500" />
-                                    <div className="w-1 h-4 bg-blue-500" />
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
+                    {/* Background Glow */}
+                    <div className="absolute inset-0 bg-blue-500/5 blur-[120px] -z-10 pointer-events-none" />
                 </div>
             </div>
         </section>

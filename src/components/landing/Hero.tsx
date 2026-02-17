@@ -60,7 +60,7 @@ export default function Hero() {
                         transition={{ delay: 0.6 }}
                         className="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl font-light tracking-wide italic"
                     >
-                        Creativity Meets Technology, Ideas Into Solutions. 24 Hours.
+                        24 Hour Hackathon
                     </motion.p>
 
                     {/* Highly Visible Deadline & Fee */}
