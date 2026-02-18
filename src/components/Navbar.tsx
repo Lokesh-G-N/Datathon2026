@@ -42,7 +42,7 @@ export default function Navbar() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? "py-2 md:py-4 bg-black/40 backdrop-blur-2xl border-b border-white/10" : "py-4 md:py-8 bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? "py-2 md:py-4 bg-black/40 backdrop-blur-md md:backdrop-blur-2xl border-b border-white/10" : "py-4 md:py-8 bg-transparent"}`}
     >
       <div className="container px-4 mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center group cursor-pointer shrink-0">

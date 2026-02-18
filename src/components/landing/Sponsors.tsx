@@ -36,7 +36,7 @@ function SponsorCard({ sponsor, index }: { sponsor: typeof sponsors[0], index: n
             />
 
             <div className="relative z-10 flex flex-col items-center">
-                <span className="font-black text-2xl text-slate-300 group-hover:text-white transition-colors duration-500 tracking-tighter uppercase italic">
+                <span className="font-black text-lg md:text-2xl text-slate-300 group-hover:text-white transition-colors duration-500 tracking-tighter uppercase italic">
                     {sponsor.name}
                 </span>
                 <span className="text-[8px] font-black text-blue-500/50 uppercase tracking-[0.4em] mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
@@ -56,7 +56,7 @@ function SponsorCard({ sponsor, index }: { sponsor: typeof sponsors[0], index: n
 
 export default function Sponsors() {
     return (
-        <section id="sponsors" className="py-32 bg-transparent relative overflow-hidden">
+        <section id="sponsors" className="py-6 md:py-32 bg-transparent relative overflow-hidden">
             <div className="container px-4 mx-auto text-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -64,7 +64,7 @@ export default function Sponsors() {
                     viewport={{ once: true }}
                     className="mb-24"
                 >
-                    <h2 className="text-3xl font-black mb-4 tracking-[0.5em] text-blue-500 uppercase italic">
+                    <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-[0.3em] md:tracking-[0.5em] text-blue-500 uppercase italic">
                         Sponsors
                     </h2>
                 </motion.div>

@@ -26,20 +26,20 @@ export default function Tracks() {
     ];
 
     return (
-        <section id="tracks" className="py-20 bg-secondary/20">
+        <section id="tracks" className="py-6 md:py-20 bg-secondary/20">
             <div className="container px-4 mx-auto">
-                <h2 className="text-4xl font-bold text-center mb-16">Problem Statements</h2>
-                <div className="grid md:grid-cols-2 gap-6">
+                <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 uppercase italic">Problem Statements</h2>
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
                     {tracks.map((track, i) => (
-                        <Card key={i} className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary transition-all hover:shadow-lg hover:-translate-y-1">
-                            <CardHeader>
-                                <CardTitle className="text-2xl">{track.title}</CardTitle>
-                                <CardDescription className="text-base mt-2">{track.desc}</CardDescription>
+                        <Card key={i} className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary transition-all hover:shadow-lg hover:-translate-y-1 rounded-2xl md:rounded-3xl">
+                            <CardHeader className="p-3 md:p-6">
+                                <CardTitle className="text-sm md:text-2xl leading-tight">{track.title}</CardTitle>
+                                <CardDescription className="text-xs md:text-base mt-1 md:mt-2 line-clamp-2 md:line-clamp-none leading-tight">{track.desc}</CardDescription>
                             </CardHeader>
-                            <CardContent>
-                                <div className="flex flex-wrap gap-2">
+                            <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                                <div className="flex flex-wrap gap-1 md:gap-2">
                                     {track.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                                        <Badge key={tag} variant="secondary" className="text-[10px] md:text-xs px-1.5 md:px-2 py-0 md:py-0.5">{tag}</Badge>
                                     ))}
                                 </div>
                             </CardContent>

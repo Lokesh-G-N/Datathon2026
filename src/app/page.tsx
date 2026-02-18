@@ -3,7 +3,6 @@ import Hero from "@/components/landing/Hero";
 import About from "@/components/landing/About";
 import ProblemStatements from "@/components/landing/ProblemStatements";
 import Guidelines from "@/components/landing/Guidelines";
-import Timeline from "@/components/landing/Timeline";
 import Prizes from "@/components/landing/Prizes";
 import Coordinators from "@/components/landing/Coordinators";
 import FAQ from "@/components/landing/FAQ";
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       <About />
       <ProblemStatements />
-      <Timeline />
       <Prizes />
       <Guidelines />
       <Coordinators />

@@ -23,41 +23,41 @@ function TimelineItem({ item, index }: { item: typeof schedule[0], index: number
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: index * 0.1, type: "spring", stiffness: 50 }}
-            className="relative pl-12 pb-20 group"
+            className="relative pl-8 md:pl-12 pb-10 md:pb-20 group"
         >
             {/* Pulsing Light Node */}
             <div className="absolute left-[-9px] top-6 z-20">
                 <motion.div
                     animate={{
-                        scale: [1, 1.5, 1],
-                        boxShadow: ["0 0 0px #3b82f6", "0 0 20px #3b82f6", "0 0 0px #3b82f6"]
+                        scale: [1, 1.2, 1],
+                        boxShadow: ["0 0 0px #3b82f6", "0 0 10px #3b82f6", "0 0 0px #3b82f6"]
                     }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
-                    className="w-4 h-4 rounded-full bg-blue-500 border-2 border-[#0a0e14]"
+                    className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-blue-500 border-2 border-[#0a0e14]"
                 />
                 <div className="absolute inset-0 rounded-full bg-blue-400 blur-sm opacity-50 group-hover:opacity-100 transition-opacity" />
             </div>
 
             {/* Content Card with Glow */}
             <motion.div
-                whileHover={{ x: 10, scale: 1.02 }}
-                className="relative bg-black/40 backdrop-blur-xl p-8 rounded-[2rem] border border-white/5 group-hover:border-blue-500/30 transition-all duration-500 overflow-hidden shadow-2xl"
+                whileHover={{ x: 5, scale: 1.01 }}
+                className="relative bg-black/40 backdrop-blur-md md:backdrop-blur-xl p-4 md:p-8 rounded-2xl md:rounded-[2rem] border border-white/5 group-hover:border-blue-500/30 transition-all duration-500 overflow-hidden shadow-2xl"
             >
                 {/* Background Glow Overlay */}
                 <div className="absolute -right-20 -top-20 w-40 h-40 bg-blue-500/5 rounded-full blur-[80px] group-hover:bg-blue-500/10 transition-all" />
 
                 <div className="flex flex-col md:flex-row md:items-center gap-6 relative z-10">
                     <div className="shrink-0">
-                        <span className="text-3xl font-black text-white/20 group-hover:text-blue-500/40 transition-colors duration-500 tabular-nums">
+                        <span className="text-lg md:text-3xl font-black text-white/20 group-hover:text-blue-500/40 transition-colors duration-500 tabular-nums">
                             {item.time}
                         </span>
                     </div>
 
                     <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight">
+                        <h3 className="text-sm md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors uppercase tracking-tight">
                             {item.event}
                         </h3>
-                        <p className="mt-2 text-slate-400 font-medium group-hover:text-slate-300 transition-colors italic">
+                        <p className="mt-1 md:mt-2 text-[11px] md:text-xl text-slate-400 font-medium group-hover:text-slate-300 transition-colors italic leading-tight md:leading-normal">
                             {item.desc}
                         </p>
                     </div>
@@ -89,7 +89,7 @@ export default function Timeline() {
     });
 
     return (
-        <section id="timeline" className="py-32 bg-transparent relative overflow-hidden">
+        <section id="timeline" className="py-6 md:py-32 bg-transparent relative overflow-hidden">
             <div className="container px-4 mx-auto max-w-5xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export default function Timeline() {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center mb-32"
                 >
-                    <h2 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter uppercase italic">
+                    <h2 className="text-2xl md:text-7xl font-black mb-4 md:mb-6 text-white tracking-tighter uppercase italic">
                         <span className="text-blue-500">Timelines</span>
                     </h2>
                 </motion.div>
@@ -132,13 +132,13 @@ export default function Timeline() {
                             className="relative group flex flex-col items-center"
                         >
                             {/* Cosmic Propulsion Glow */}
-                            <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-4 h-12 bg-orange-500/30 blur-xl rounded-full animate-pulse" />
-                            <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full scale-125 opacity-40" />
+                            <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-4 h-12 bg-orange-500/30 blur-xl rounded-full animate-pulse hidden md:block" />
+                            <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full scale-125 opacity-40 hidden md:block" />
 
                             <img
                                 src="/rocket-astronaut.png"
                                 alt="Rocket Astronaut"
-                                className="w-20 md:w-24 h-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
+                                className="w-12 md:w-24 h-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
                             />
                         </motion.div>
                     </motion.div>

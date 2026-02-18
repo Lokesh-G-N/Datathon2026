@@ -7,7 +7,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hack2026 - Forge Legends",
+  title: "Datathon 2026 CIT",
   description: "24-Hour National Hackathon Event",
 };
 

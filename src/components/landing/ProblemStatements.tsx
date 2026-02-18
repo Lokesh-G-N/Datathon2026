@@ -105,7 +105,7 @@ export default function ProblemStatements() {
     const [activeIdx, setActiveIdx] = useState(0);
 
     return (
-        <section id="problems" className="py-32 bg-transparent relative overflow-hidden">
+        <section id="problems" className="py-6 md:py-32 bg-transparent relative overflow-hidden">
             <div className="container px-4 mx-auto relative z-10 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -113,24 +113,19 @@ export default function ProblemStatements() {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center mb-20"
                 >
-                    <h2 className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter uppercase italic">
-                        Problem <span className="text-blue-500 text-glow">Statements</span>
+                    <h2 className="text-2xl md:text-7xl font-black mb-4 md:mb-6 text-white tracking-tighter uppercase italic">
+                        <span className="text-blue-500">Problem Statements</span>
                     </h2>
                 </motion.div>
 
                 <div className="flex flex-col items-center justify-center min-h-[400px] relative">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="w-full max-w-2xl bg-black/40 border border-white/5 backdrop-blur-2xl rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group"
-                    >
-                        {/* Digital Scanline Effect */}
+                    <Card className="w-full max-w-2xl bg-black/40 border border-white/5 backdrop-blur-md md:backdrop-blur-2xl rounded-[1.5rem] md:rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 z-10" />
+
                         <motion.div
-                            animate={{ y: ["-100%", "500%"] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                            className="absolute left-0 right-0 h-[1px] bg-blue-500/10 z-0 pointer-events-none"
+                            animate={{ y: ["-100%", "600%"] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                            className="absolute left-0 right-0 h-[50px] md:h-[100px] bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none z-0 hidden md:block"
                         />
 
                         <div className="relative z-10 flex flex-col items-center gap-8">
@@ -139,14 +134,14 @@ export default function ProblemStatements() {
                             </div>
 
                             <div className="space-y-4">
-                                <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.5em]">Data Encryption Enabled</p>
-                                <h3 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-tight">
+                                <p className="text-[11px] md:text-[10px] font-black text-blue-500 uppercase tracking-widest">Data Encryption Enabled</p>
+                                <h3 className="text-xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-tight">
                                     Problems <br />
                                     <span className="text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">Released Soon</span>
                                 </h3>
                             </div>
 
-                            <p className="text-lg md:text-xl text-slate-400 font-light italic max-w-md">
+                            <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md">
                                 The high-priority problem statements will be decrypted shortly.
                             </p>
                         </div>
@@ -160,11 +155,9 @@ export default function ProblemStatements() {
                             <div className="w-1 h-4 bg-blue-500" />
                             <div className="w-1 h-8 bg-blue-500" />
                         </div>
-                    </motion.div>
-
-                    {/* Background Glow */}
-                    <div className="absolute inset-0 bg-blue-500/5 blur-[120px] -z-10 pointer-events-none" />
+                    </Card>
                 </div>
+                <div className="absolute inset-0 bg-blue-500/5 blur-[120px] -z-10 pointer-events-none" />
             </div>
         </section>
     );

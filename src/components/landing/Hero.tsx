@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-20">
+        <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-20">
             {/* Background "Kryptonian" Beam Pulses */}
             <div className="absolute inset-0 pointer-events-none">
                 <motion.div
@@ -14,7 +14,7 @@ export default function Hero() {
                         scale: [1, 1.2, 1]
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_70%)]"
+                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_70%)] hidden md:block"
                 />
             </div>
 
@@ -32,25 +32,25 @@ export default function Hero() {
                         transition={{ delay: 0.3 }}
                         className="mb-8"
                     >
-                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md">
+                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm md:backdrop-blur-md">
                             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                            <span className="text-[10px] md:text-xs font-black text-blue-400 uppercase tracking-[0.3em]">
+                            <span className="text-[8px] md:text-xs font-black text-blue-400 uppercase tracking-[0.2em] md:tracking-[0.3em]">
                                 14th - 15th March 2026
                             </span>
                         </div>
                     </motion.div>
 
                     {/* Main Title */}
-                    <h1 className="text-7xl md:text-[10rem] font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.8] relative">
+                    <h1 className="text-4xl md:text-[10rem] font-black text-white mb-4 md:mb-8 tracking-tighter uppercase italic leading-[0.8] relative">
                         Datathon
                         <br />
-                        <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] text-5xl md:text-8xl block mt-4">2k26</span>
+                        <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] text-3xl md:text-8xl block mt-2 md:mt-4">2k26</span>
 
                         {/* Title Accent */}
                         <motion.div
                             animate={{ opacity: [0.3, 0.6, 0.3] }}
                             transition={{ duration: 4, repeat: Infinity }}
-                            className="absolute -inset-10 bg-blue-500/10 blur-[100px] pointer-events-none"
+                            className="absolute -inset-10 bg-blue-500/10 blur-2xl md:blur-[100px] pointer-events-none"
                         />
                     </h1>
 
@@ -58,7 +58,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl font-light tracking-wide italic"
+                        className="text-sm md:text-2xl text-slate-400 mb-6 md:mb-8 max-w-2xl font-light tracking-wide italic"
                     >
                         24 Hour Hackathon
                     </motion.p>
@@ -73,16 +73,16 @@ export default function Hero() {
                         <div className="absolute -inset-4 bg-red-600/20 blur-2xl group-hover:bg-red-600/30 transition-all rounded-[2rem]" />
 
                         {/* Fee Detail */}
-                        <div className="relative flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                                Registration Fee: <span className="text-white">₹300 / Participant</span>
-                                <span className="text-slate-600 ml-2">(max 4 per team)</span>
+                        <div className="relative flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                            <span className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                Fee: <span className="text-white">₹300 / Pax</span>
+                                <span className="text-slate-600 ml-1 md:ml-2">(max 4)</span>
                             </span>
                         </div>
 
                         {/* Deadline Banner */}
-                        <div className="relative px-8 py-4 rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
-                            <span className="text-red-500 font-black text-xl md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+                        <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
+                            <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
                                 Register before Feb 27th
                             </span>
                         </div>
@@ -97,7 +97,7 @@ export default function Hero() {
                     >
                         <Button
                             asChild
-                            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-12 py-8 h-auto text-lg transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)] border-none relative overflow-hidden group"
+                            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-8 py-5 md:px-12 md:py-8 h-auto text-sm md:text-lg transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)] border-none relative overflow-hidden group"
                         >
                             <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank">
                                 <span className="relative z-10">Register Now</span>
@@ -105,9 +105,9 @@ export default function Hero() {
                             </a>
                         </Button>
 
-                        <div className="flex flex-col items-start px-6 py-2 border-l border-white/10 ml-0 md:ml-4">
-                            <span className="text-[10px] text-slate-500 font-black tracking-widest uppercase">Venue</span>
-                            <span className="text-white font-bold uppercase tracking-tight text-sm">Coimbatore Institute of Technology</span>
+                        <div className="flex flex-col items-center md:items-start px-6 py-2 border-none md:border-l border-white/10 ml-0 md:ml-4">
+                            <span className="text-[8px] text-slate-500 font-black tracking-widest uppercase">Venue</span>
+                            <span className="text-white font-bold uppercase tracking-tight text-[10px] md:text-sm">Coimbatore Institute of Technology</span>
                         </div>
                     </motion.div>
                 </motion.div>
