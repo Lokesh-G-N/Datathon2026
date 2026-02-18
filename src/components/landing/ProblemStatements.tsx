@@ -142,7 +142,7 @@ export default function ProblemStatements() {
                             </div>
 
                             <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md">
-                                The high-priority problem statements will be decrypted shortly.
+                                Participants will engage with problems derived directly from industrial and real world use cases.
                             </p>
                         </div>
 

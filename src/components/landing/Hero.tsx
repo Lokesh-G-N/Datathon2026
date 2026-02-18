@@ -58,10 +58,31 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
-                        className="text-sm md:text-2xl text-slate-400 mb-6 md:mb-8 max-w-2xl font-light tracking-wide italic"
+                        className="text-sm md:text-2xl text-slate-400 mb-2 md:mb-4 max-w-2xl font-light tracking-wide italic"
                     >
                         24 Hour Hackathon
                     </motion.p>
+
+                    {/* New Highlight: Prize Pool & Internships */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.7 }}
+                        className="flex flex-col items-center gap-2 md:gap-4 mb-8"
+                    >
+                        <div className="relative group">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+                            <div className="relative px-6 py-2 md:px-10 md:py-4 bg-black/60 border border-blue-500/20 backdrop-blur-xl rounded-xl flex flex-col md:flex-row items-center gap-2 md:gap-6">
+                                <span className="text-xl md:text-3xl font-black text-white italic tracking-tighter">
+                                    <span className="text-blue-500">₹75,000 </span> PRIZE POOL
+                                </span>
+                                <div className="hidden md:block w-[1px] h-8 bg-blue-500/20" />
+                                <span className="text-[10px] md:text-sm font-bold text-blue-400/80 uppercase tracking-[0.2em]">
+                                    Internship opportunities will be awarded
+                                </span>
+                            </div>
+                        </div>
+                    </motion.div>
 
                     {/* Highly Visible Deadline & Fee */}
                     <motion.div

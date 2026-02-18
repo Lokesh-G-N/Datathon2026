@@ -1,20 +1,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Menu, X, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const links = [
-  { name: "About", href: "#about" },
-  { name: "Problems", href: "#problems" },
-  { name: "Timeline", href: "#timeline" },
-  { name: "Prizes", href: "#prizes" },
-  { name: "Guidelines", href: "#rules" },
+  { name: "About", href: "/#about" },
+  { name: "Problems", href: "/#problems" },
+  { name: "Prizes", href: "/#prizes" },
+  { name: "Guidelines", href: "/#rules" },
+  { name: "Coordinators", href: "/coordinators" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -70,7 +73,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4 shrink-0">
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 text-slate-400 hover:text-blue-500 transition-colors relative z-[110]"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        <div className="flex items-center gap-4 shrink-0 relative z-[110]">
           <Button
             asChild
             className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-4 py-3 md:px-8 md:py-6 text-[10px] md:text-sm h-auto transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] border-none relative overflow-hidden group"
@@ -87,6 +98,61 @@ export default function Navbar() {
           </Button>
         </div>
       </div>
+
+      {/* Mobile Navigation Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-y-0 left-0 z-[105] lg:hidden w-[75vw] bg-black/80 backdrop-blur-xl flex flex-col p-6 pt-24 border-r border-white/10 shadow-2xl"
+          >
+            {/* Background Cybernetic Accents */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-[100px] pointer-events-none" />
+
+            <nav className="flex flex-col gap-6 relative z-10">
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center justify-between group"
+                  >
+                    <span className="text-lg font-black uppercase tracking-[0.2em] text-slate-200 group-hover:text-blue-500 transition-colors italic">
+                      {link.name}
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-blue-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-auto"
+            >
+              <Button
+                asChild
+                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-xl py-6 text-[10px] h-auto shadow-[0_0_30px_rgba(59,130,246,0.3)] border-none"
+              >
+                <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank" onClick={() => setIsOpen(false)}>
+                  Register here
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

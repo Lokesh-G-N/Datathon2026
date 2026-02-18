@@ -4,22 +4,56 @@ import { motion } from "framer-motion";
 import { Phone, User, GraduationCap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-const staffCoordinators = [
-    { name: "Dr.D.Sudha Devi", role: "Event Ideation & Concept Lead / Food & Hospitality", phone: "+91 98944 54045" },
-    { name: "Dr.J.Rathika", role: "Event Coordinator / Inauguration & Validation", phone: "+91 96290 59808" },
-    { name: "Dr.M.Marimuthu", role: "Event Coordinator / Inauguration & Validation", phone: "+91 98940 62167" },
-    { name: "Dr.S.Gayathri Devi", role: "Judging & Jury Coordinator", phone: "+91 99445 61345" },
-    { name: "Dr.K.Rajarajeshwari", role: "Sponsorship & Finance Coordinator", phone: "+91 97916 77644" },
-    { name: "Dr.M.Srividya", role: "Inauguration and Validation Lead", phone: "+91 98651 89542" },
-    { name: "Ms.S.Deivarani", role: "Registration & Participant Management", phone: "+91 94866 24020" },
-    { name: "Ms.K.H.Vani", role: "Registration & Participant Management", phone: "+91 98439 32496" },
-    { name: "Dr.P.Velavadivu", role: "Food & Hospitality Coordinator", phone: "+91 94866 41259" }
+const staffCategories = [
+    {
+        title: "Event Coordination & Ideation",
+        members: [
+            { name: "Dr.D.Sudha Devi", role: "Event Ideation & Concept Lead / Food & Hospitality", phone: "+91 98944 54045" },
+            { name: "Dr.J.Rathika", role: "Event Coordinator / Inauguration & Validation", phone: "+91 96290 59808" },
+            { name: "Dr.M.Marimuthu", role: "Event Coordinator / Inauguration & Validation", phone: "+91 98940 62167" }
+        ]
+    },
+    {
+        title: "Inauguration & Validation",
+        members: [
+            { name: "Dr.M.Srividya", role: "Inauguration and Validation Lead", phone: "+91 98651 89542" },
+            { name: "Dr.J.Rathika", role: "Event Coordinator / Inauguration & Validation", phone: "+91 96290 59808" },
+            { name: "Dr.M.Marimuthu", role: "Event Coordinator / Inauguration & Validation", phone: "+91 98940 62167" }
+        ]
+    },
+    {
+        title: "Judging & Jury",
+        members: [
+            { name: "Dr.S.Gayathri Devi", role: "Judging & Jury Coordinator", phone: "+91 99445 61345" }
+        ]
+    },
+    {
+        title: "Registration",
+        members: [
+            { name: "Ms.S.Deivarani", role: "Registration & Participant Management", phone: "+91 94866 24020" },
+            { name: "Ms.K.H.Vani", role: "Registration & Participant Management", phone: "+91 98439 32496" }
+        ]
+    },
+    {
+        title: "Food & Hospitality",
+        members: [
+            { name: "Dr.P.Velavadivu", role: "Food & Hospitality Coordinator", phone: "+91 94866 41259" },
+            { name: "Dr.D.Sudha Devi", role: "Event Ideation & Concept Lead / Food & Hospitality", phone: "+91 98944 54045" }
+        ]
+    },
+    {
+        title: "Sponsorship & Finance",
+        members: [
+            { name: "Dr.K.Rajarajeshwari", role: "Sponsorship & Finance Coordinator", phone: "+91 97916 77644" }
+        ]
+    }
 ];
 
 const studentCoordinators = [
     { name: "PRAISOODI A", role: "Student Coordinator", phone: "95972 81888" },
     { name: "RAMSANJAI S", role: "Student Coordinator", phone: "93616 29703" },
-    { name: "ROHIT V", role: "Student Coordinator", phone: "93427 34959" }
+    { name: "Dhivya K P", role: "Student Coordinator", phone: "99942 22914" },
+    { name: "Sahithya V", role: "Student Coordinator", phone: "80723 21655" }
 ];
 
 function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' }) {
@@ -31,13 +65,32 @@ function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' 
             className="group"
         >
             <Card className={`relative p-3 md:p-8 bg-black/40 backdrop-blur-md md:backdrop-blur-2xl border transition-all duration-500 rounded-2xl md:rounded-[2rem] overflow-hidden ${type === 'staff' ? 'border-blue-500/10 group-hover:border-blue-500/30' : 'border-white/5 group-hover:border-blue-500/20'}`}>
-                <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-2 md:gap-4 mb-3 md:mb-6">
-                    <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/20">
-                        {type === 'staff' ? <GraduationCap className="w-4 h-4 md:w-6 md:h-6" /> : <User className="w-4 h-4 md:w-6 md:h-6" />}
-                    </div>
-                    <div>
-                        <h4 className="text-[10px] md:text-xl font-black text-white tracking-tight uppercase italic leading-tight">{person.name}</h4>
-                        <p className="text-[7px] md:text-[10px] font-black text-slate-500 uppercase tracking-widest mt-0.5">{person.role}</p>
+                <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 md:gap-6 mb-4 md:mb-8">
+                    {/* Photo Placeholder for Staff */}
+                    {type === 'staff' && (
+                        <div className="relative group/photo">
+                            <div className="w-20 h-20 md:w-32 md:h-32 rounded-xl md:rounded-2xl border-2 border-blue-500/20 bg-blue-500/5 overflow-hidden flex items-center justify-center transition-all duration-500 group-hover/photo:border-blue-500/40">
+                                <User className="w-10 h-10 md:w-16 md:h-16 text-blue-500/20" />
+                                {/* Cybernetic corner accents for photo */}
+                                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500/40" />
+                                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500/40" />
+                            </div>
+                            <div className="absolute -inset-2 bg-blue-500/5 blur-xl rounded-full opacity-0 group-hover/photo:opacity-100 transition-opacity" />
+                        </div>
+                    )}
+
+                    <div className="flex flex-col gap-3 md:gap-4 w-full">
+                        <div className="flex flex-col items-center md:items-start gap-3">
+                            <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/20 w-fit">
+                                {type === 'staff' ? <GraduationCap className="w-4 h-4 md:w-6 md:h-6" /> : <User className="w-4 h-4 md:w-6 md:h-6" />}
+                            </div>
+                            <h4 className="text-sm md:text-2xl font-black text-white tracking-tighter uppercase italic leading-[1.1] w-full break-normal">
+                                {person.name}
+                            </h4>
+                        </div>
+                        {type === 'student' && (
+                            <p className="text-[8px] md:text-xs font-black text-slate-500 uppercase tracking-widest leading-tight">{person.role}</p>
+                        )}
                     </div>
                 </div>
 
@@ -71,24 +124,26 @@ export default function Coordinators() {
                     className="max-w-4xl mx-auto text-center mb-24"
                 >
                     <h2 className="text-2xl md:text-7xl font-black mb-4 md:mb-6 text-white tracking-tighter uppercase italic">
-                        <span className="text-blue-500">Coordinators</span>
+                        Event <span className="text-blue-500">Coordinators</span>
                     </h2>
                 </motion.div>
 
                 <div className="space-y-24">
-                    {/* Staff Section */}
-                    <div>
-                        <div className="flex items-center gap-4 mb-12">
-                            <div className="h-[1px] flex-1 bg-blue-500/20" />
-                            <h3 className="text-xs font-black text-blue-500 uppercase tracking-[0.5em] whitespace-nowrap">Faculty Oversight</h3>
-                            <div className="h-[1px] flex-1 bg-blue-500/20" />
+                    {/* Staff Categories Section */}
+                    {staffCategories.map((category, catIdx) => (
+                        <div key={catIdx} className="space-y-12">
+                            <div className="flex items-center gap-4">
+                                <div className="h-[1px] flex-1 bg-blue-500/20" />
+                                <h3 className="text-xs font-black text-blue-500 uppercase tracking-[0.5em] whitespace-nowrap">{category.title}</h3>
+                                <div className="h-[1px] flex-1 bg-blue-500/20" />
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6">
+                                {category.members.map((staff, i) => (
+                                    <ContactCard key={i} person={staff} type="staff" />
+                                ))}
+                            </div>
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                            {staffCoordinators.map((staff, i) => (
-                                <ContactCard key={i} person={staff} type="staff" />
-                            ))}
-                        </div>
-                    </div>
+                    ))}
 
                     {/* Student Section */}
                     <div>

@@ -4,7 +4,6 @@ import About from "@/components/landing/About";
 import ProblemStatements from "@/components/landing/ProblemStatements";
 import Guidelines from "@/components/landing/Guidelines";
 import Prizes from "@/components/landing/Prizes";
-import Coordinators from "@/components/landing/Coordinators";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/Footer";
 
@@ -17,7 +16,6 @@ export default function Home() {
       <ProblemStatements />
       <Prizes />
       <Guidelines />
-      <Coordinators />
       <FAQ />
       <Footer />
     </main>
