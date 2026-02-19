@@ -6,6 +6,12 @@ import { Card } from "@/components/ui/card";
 
 const staffCategories = [
     {
+        title: "Convener",
+        members: [
+            { name: "Dr.S.Suganthi", role: "Convener", phone: "+91 99442 49964", photo: "/Suganthi.jpg" }
+        ]
+    },
+    {
         title: "Event Ideation & Industry Collaboration Coordinator",
         members: [
             { name: "Dr.D.Sudha Devi", role: "Concept Lead", phone: "+91 98944 54045", photo: "/Sudhadevi.jpg" }
