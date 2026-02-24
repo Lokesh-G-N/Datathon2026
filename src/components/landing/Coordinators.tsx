@@ -1,3 +1,4 @@
+```
 "use client";
 
 import { motion } from "framer-motion";
@@ -32,7 +33,7 @@ function ContactCard({ person }: { person: any }) {
 
                     {person.phone.match(/\d/) && (
                         <a
-                            href={`tel:${person.phone.replace(/\s/g, '')}`}
+                            href={`tel:${ person.phone.replace(/\s/g, '') } `}
                             className="shrink-0 w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 group-hover:scale-105"
                         >
                             <Phone className="w-5 h-5 text-blue-500 group-hover:text-white" />
