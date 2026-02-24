@@ -102,12 +102,12 @@ export default function Guidelines() {
                 <div className="mt-10 md:mt-20 grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-8">
                     <div className="p-4 md:p-8 border border-white/5 bg-white/5 backdrop-blur-md rounded-2xl md:rounded-3xl text-center">
                         <p className="text-[10px] md:text-[10px] text-slate-500 font-black tracking-widest uppercase mb-1 md:mb-2">Registration Fee</p>
-                        <p className="text-sm md:text-3xl font-black text-white italic">₹300 / Pax</p>
-                        <p className="text-[10px] md:text-xs text-slate-400 mt-1 md:mt-2">Min 1 - Max 4 / Team</p>
+                        <p className="text-sm md:text-3xl font-black text-white italic">₹300 / Person</p>
+                        <p className="text-[10px] md:text-xs text-slate-400 mt-1 md:mt-2">Min 2 - Max 4 / Team</p>
                     </div>
                     <div className="p-4 md:p-8 border border-blue-500/20 bg-blue-500/5 backdrop-blur-md rounded-2xl md:rounded-3xl text-center">
                         <p className="text-[10px] md:text-[10px] text-blue-400/60 font-black tracking-widest uppercase mb-1 md:mb-2">Deadline</p>
-                        <p className="text-sm md:text-3xl font-black text-white italic">27th Feb</p>
+                        <p className="text-sm md:text-3xl font-black text-white italic">24th Feb</p>
                         <p className="text-[10px] md:text-xs text-blue-400/40 mt-1 md:mt-2">Final Protocol</p>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ export default function Guidelines() {
                                 <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5">Lunch</li>
                                 <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5">Snacks</li>
                                 <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5">Dinner</li>
-                                <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5 text-blue-400/80">Midnight</li>
+                                <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5">Midnight Refreshments</li>
                             </ul>
                         </div>
                         <div className="space-y-3 md:space-y-4">

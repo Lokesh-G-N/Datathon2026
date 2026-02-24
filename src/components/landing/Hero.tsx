@@ -96,15 +96,15 @@ export default function Hero() {
                         {/* Fee Detail */}
                         <div className="relative flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
                             <span className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                                Fee: <span className="text-white">₹300 / Pax</span>
-                                <span className="text-slate-600 ml-1 md:ml-2">(max 4)</span>
+                                Fee: <span className="text-white">₹300 / Person</span>
+                                <span className="text-white ml-1 md:ml-2">(2-4 in a team)</span>
                             </span>
                         </div>
 
                         {/* Deadline Banner */}
                         <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
                             <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
-                                Register before Feb 27th
+                                Register before Feb 24th
                             </span>
                         </div>
                     </motion.div>

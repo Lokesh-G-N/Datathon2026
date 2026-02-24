@@ -1,98 +1,136 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const sponsors = [
-    { name: "Tech Corp", tier: "Title", color: "rgba(59, 130, 246, 0.4)" },
-    { name: "Cloud Systems", tier: "Gold", color: "rgba(96, 165, 250, 0.3)" },
-    { name: "Dev Tools", tier: "Gold", color: "rgba(147, 197, 253, 0.2)" },
-    { name: "Startup IO", tier: "Silver", color: "rgba(239, 68, 68, 0.2)" },
-    { name: "Digital Future", tier: "Silver", color: "rgba(16, 185, 129, 0.2)" },
-    { name: "Code Academy", tier: "Bronze", color: "rgba(139, 92, 246, 0.2)" }
+const allSponsors = [
+    { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/Untitled design.png", color: "rgba(139, 92, 246, 0.4)", size: "large" }
 ];
 
-function SponsorCard({ sponsor, index }: { sponsor: typeof sponsors[0], index: number }) {
-    const [isHovered, setIsHovered] = useState(false);
+function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
+    const sizeClasses = {
+        large: "h-24 w-48 md:h-32 md:w-64",
+        medium: "h-20 w-40 md:h-24 md:w-48",
+        small: "h-16 w-32 md:h-20 md:w-40"
+    }[sponsor.size as "large" | "medium" | "small"];
 
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 0.6, scale: 1 }}
-            whileHover={{ opacity: 1, scale: 1.1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="flex items-center justify-center p-8 relative group cursor-pointer"
-        >
-            {/* Holographic Pedestal Base */}
-            <div className="absolute inset-0 bg-white/5 border border-white/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-75 group-hover:scale-100 backdrop-blur-xl" />
+        <div className={`relative flex items-center justify-center ${sizeClasses} mx-6 group flex-shrink-0`}>
+            {/* Holographic Background */}
+            <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl opacity-40 group-hover:opacity-100 transition-all duration-500 backdrop-blur-sm" />
 
-            {/* Radial Brand Glow */}
+            {/* Glow Effect */}
             <div
-                className="absolute inset-0 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                className="absolute inset-4 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-700"
                 style={{ background: `radial-gradient(circle at center, ${sponsor.color}, transparent 70%)` }}
             />
 
-            <div className="relative z-10 flex flex-col items-center">
-                <span className="font-black text-lg md:text-2xl text-slate-300 group-hover:text-white transition-colors duration-500 tracking-tighter uppercase italic">
-                    {sponsor.name}
-                </span>
-                <span className="text-[8px] font-black text-blue-500/50 uppercase tracking-[0.4em] mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    {sponsor.tier} Partner
-                </span>
+            <div className="relative z-10 flex flex-col items-center p-4">
+                {sponsor.logo ? (
+                    <img src={sponsor.logo} alt={sponsor.name} className="max-h-[70%] max-w-[90%] object-contain" />
+                ) : (
+                    <>
+                        <span className="text-[8px] md:text-[10px] font-bold text-blue-400 opacity-60 group-hover:opacity-100 transition-opacity uppercase tracking-widest mb-1">
+                            {sponsor.tier}
+                        </span>
+                        <span className="font-black text-lg md:text-xl text-white/70 group-hover:text-white transition-colors duration-500 tracking-tighter uppercase italic text-center">
+                            {sponsor.name}
+                        </span>
+                    </>
+                )}
             </div>
 
-            {/* Scanning Line */}
+            {/* Animated Scanning Line */}
             <motion.div
-                animate={{ x: ["-100%", "100%"] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-x-0 h-[1px] bg-white/10 opacity-0 group-hover:opacity-100 top-1/2"
+                animate={{ x: ["-100%", "230%"] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-transparent via-blue-400/30 to-transparent opacity-0 group-hover:opacity-100 left-0"
             />
-        </motion.div>
+        </div>
     );
 }
 
 export default function Sponsors() {
-    return (
-        <section id="sponsors" className="py-6 md:py-32 bg-transparent relative overflow-hidden">
-            <div className="container px-4 mx-auto text-center relative z-10">
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="mb-24"
-                >
-                    <h2 className="text-2xl md:text-3xl font-black mb-4 tracking-[0.3em] md:tracking-[0.5em] text-blue-500 uppercase italic">
-                        Sponsors
-                    </h2>
-                </motion.div>
+    const containerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [shouldAnimate, setShouldAnimate] = useState(false);
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center max-w-6xl mx-auto">
-                    {sponsors.map((s, i) => (
-                        <SponsorCard key={i} sponsor={s} index={i} />
-                    ))}
+    useEffect(() => {
+        const checkOverflow = () => {
+            if (containerRef.current && contentRef.current) {
+                // If the combined width of all items (with margins) > container width, then animate
+                const contentWidth = contentRef.current.scrollWidth;
+                const containerWidth = containerRef.current.clientWidth;
+                setShouldAnimate(allSponsors.length > 1 && contentWidth > containerWidth);
+            }
+        };
+
+        // Delay slightly to ensure layout is ready
+        const timer = setTimeout(checkOverflow, 100);
+        window.addEventListener("resize", checkOverflow);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("resize", checkOverflow);
+        };
+    }, []);
+
+    // Duplicate for seamless loop ONLY if animating
+    const displaySponsors = shouldAnimate
+        ? [...allSponsors, ...allSponsors, ...allSponsors]
+        : allSponsors;
+
+    return (
+        <section id="sponsors" className="py-24 bg-transparent relative overflow-hidden">
+            <div className="relative z-10 w-full">
+                <div className="container px-4 mx-auto text-center mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-[0.4em] text-white uppercase italic">
+                            Official <span className="text-blue-500">Sponsors</span>
+                        </h2>
+                    </motion.div>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 }}
-                    className="mt-32"
+                <div
+                    ref={containerRef}
+                    className="w-full overflow-hidden relative py-10"
                 >
-                    <div className="inline-block p-1 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 w-full max-w-md" />
-                    <p className="text-muted-foreground mb-6 text-sm font-medium tracking-wide">Ready to fuel the future of engineering?</p>
-                    <a href="mailto:sponsor@hackathon.com" className="relative group px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-black uppercase text-xs tracking-widest hover:bg-blue-500 hover:text-white transition-all overflow-hidden inline-flex items-center gap-2">
-                        <span className="relative z-10">Join the Collective</span>
-                        <div className="absolute inset-0 bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-                    </a>
-                </motion.div>
+                    <motion.div
+                        ref={contentRef}
+                        className={`flex items-center ${!shouldAnimate ? "justify-center" : ""}`}
+                        animate={shouldAnimate ? {
+                            x: [0, -250 * allSponsors.length]
+                        } : {}}
+                        transition={{
+                            duration: 40,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                    >
+                        {displaySponsors.map((sponsor, i) => (
+                            <SponsorLogoPlaceholder key={i} sponsor={sponsor} />
+                        ))}
+                    </motion.div>
+
+                    {/* Faded edges - only show if overflowing */}
+                    {shouldAnimate && (
+                        <>
+                            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+                            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+                        </>
+                    )}
+                </div>
             </div>
 
             {/* Background Texture Overlay */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+
+            {/* Ambient Glows */}
+            <div className="absolute top-1/2 -left-1/4 w-1/2 h-1/2 bg-blue-500/5 blur-[120px] rounded-full" />
+            <div className="absolute top-1/2 -right-1/4 w-1/2 h-1/2 bg-purple-500/5 blur-[120px] rounded-full" />
         </section>
     );
 }

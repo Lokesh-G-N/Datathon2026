@@ -11,11 +11,13 @@ import { HelpCircle, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 const faqs = [
-    { q: "Who is eligible for the initiation?", a: "Any student currently operational in a recognized academic institution. Squads of 2-4 members form the standard engagement unit." },
-    { q: "Is there a resource acquisition fee?", a: "Negative. Participation is fully subsidized for all selected engineering units." },
-    { q: "Can I deploy as a lone operative?", a: "Individual registration is authorized. You will be integrated into a functional squad at the staging area." },
-    { q: "Are sustenance rations provided?", a: "Affirmative. Nutritional support including meals and energy refreshments will be sustained throughout the 24h cycle." },
-    { q: "What are the engagement rules?", a: "All project prototypes must be forged within the 24-hour Surge window. Pre-built mission logic is strictly prohibited." },
+    { q: "What is DATATHON 2K26?", a: "DATATHON 2K26 is a national-level 24-hour hackathon where students build data-driven solutions to real-world, industry-defined problems using data science concepts." },
+    { q: "When and where will the event be held?", a: "The event will be conducted on 14th & 15th March 2026 at Coimbatore Institute of Technology (CIT), Coimbatore." },
+    { q: "Who can participate?", a: "Undergraduate and postgraduate students from recognized institutions can participate. Students from any department or discipline are welcome." },
+    { q: "What is the team size?", a: "Teams can have 1 to 4 members. Both inter-college and inter-disciplinary teams are allowed." },
+    { q: "How and when will problem statements be released?", a: "Problem statements will be released 4–5 days before the event on the official website. Teams can start ideation and preparation in advance." },
+    { q: "Are food and other facilities provided?", a: "Yes. Lunch, refreshments, dinner, and breakfast will be provided. Participant kits and internet access will also be sustained." },
+    { q: "Will participants receive certificates?", a: "Yes, participation certificates will be provided to all teams." },
 ];
 
 function FAQItem({ faq, i, activeItem, setActiveItem }: { faq: typeof faqs[0], i: number, activeItem: string | undefined, setActiveItem: (v: string | undefined) => void }) {
