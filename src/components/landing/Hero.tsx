@@ -104,7 +104,7 @@ export default function Hero() {
                         {/* Deadline Banner */}
                         <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
                             <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
-                                Register before Feb 24th
+                                Register before Feb 27th
                             </span>
                         </div>
                     </motion.div>

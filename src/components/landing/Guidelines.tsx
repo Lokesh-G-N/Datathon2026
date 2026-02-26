@@ -107,7 +107,7 @@ export default function Guidelines() {
                     </div>
                     <div className="p-4 md:p-8 border border-blue-500/20 bg-blue-500/5 backdrop-blur-md rounded-2xl md:rounded-3xl text-center">
                         <p className="text-[10px] md:text-[10px] text-blue-400/60 font-black tracking-widest uppercase mb-1 md:mb-2">Deadline</p>
-                        <p className="text-sm md:text-3xl font-black text-white italic">24th Feb</p>
+                        <p className="text-sm md:text-3xl font-black text-white italic">27th Feb</p>
                         <p className="text-[10px] md:text-xs text-blue-400/40 mt-1 md:mt-2">Final Protocol</p>
                     </div>
                 </div>
