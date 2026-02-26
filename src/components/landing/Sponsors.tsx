@@ -9,9 +9,9 @@ const allSponsors = [
 
 function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
     const sizeClasses = {
-        large: "h-24 w-48 md:h-32 md:w-64",
-        medium: "h-20 w-40 md:h-24 md:w-48",
-        small: "h-16 w-32 md:h-20 md:w-40"
+        large: "h-48 w-80 md:h-64 md:w-[400px]",
+        medium: "h-40 w-64 md:h-52 md:w-[320px]",
+        small: "h-32 w-52 md:h-44 md:w-[240px]"
     }[sponsor.size as "large" | "medium" | "small"];
 
     return (
@@ -25,18 +25,27 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
                 style={{ background: `radial-gradient(circle at center, ${sponsor.color}, transparent 70%)` }}
             />
 
-            <div className="relative z-10 flex flex-col items-center p-4">
+            <div className="relative z-10 flex flex-col items-center w-full h-full p-6 md:p-8 text-center">
+                <div className="w-full mb-4">
+                    <span className="text-[10px] md:text-[12px] font-bold text-blue-400/80 group-hover:text-blue-400 transition-all duration-500 uppercase tracking-[0.3em]">
+                        {sponsor.tier}
+                    </span>
+                </div>
+
                 {sponsor.logo ? (
-                    <img src={sponsor.logo} alt={sponsor.name} className="max-h-[70%] max-w-[90%] object-contain" />
+                    <div className="w-full flex-1 flex items-center justify-center overflow-hidden">
+                        <img
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            className="w-full max-h-[90%] object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-500 scale-95 group-hover:scale-105"
+                        />
+                    </div>
                 ) : (
-                    <>
-                        <span className="text-[8px] md:text-[10px] font-bold text-blue-400 opacity-60 group-hover:opacity-100 transition-opacity uppercase tracking-widest mb-1">
-                            {sponsor.tier}
-                        </span>
-                        <span className="font-black text-lg md:text-xl text-white/70 group-hover:text-white transition-colors duration-500 tracking-tighter uppercase italic text-center">
+                    <div className="flex-1 flex items-center justify-center">
+                        <span className="font-black text-xl md:text-2xl text-white/70 group-hover:text-white transition-all duration-500 tracking-tighter uppercase italic">
                             {sponsor.name}
                         </span>
-                    </>
+                    </div>
                 )}
             </div>
 
