@@ -63,31 +63,41 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
 export default function Sponsors() {
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const [shouldAnimate, setShouldAnimate] = useState(false);
+    const [isOverflowing, setIsOverflowing] = useState(false);
+    const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
 
     useEffect(() => {
-        const checkOverflow = () => {
+        const updateScrolling = () => {
             if (containerRef.current && contentRef.current) {
-                // If the combined width of all items (with margins) > container width, then animate
-                const contentWidth = contentRef.current.scrollWidth;
                 const containerWidth = containerRef.current.clientWidth;
-                setShouldAnimate(allSponsors.length > 1 && contentWidth > containerWidth);
+                const contentWidth = contentRef.current.scrollWidth;
+                const overflowing = contentWidth > containerWidth;
+
+                setIsOverflowing(overflowing);
+
+                // Calculate constraints
+                // We want to allow dragging from the rightmost edge to the leftmost edge
+                // Padded by the container's padding to keep items visible
+                setDragConstraints({
+                    left: -(contentWidth - containerWidth + 80), // 80 accounting for px-10 on both sides
+                    right: 0
+                });
             }
         };
 
-        // Delay slightly to ensure layout is ready
-        const timer = setTimeout(checkOverflow, 100);
-        window.addEventListener("resize", checkOverflow);
-        return () => {
-            clearTimeout(timer);
-            window.removeEventListener("resize", checkOverflow);
-        };
-    }, []);
+        // Run immediately and after a short delay to account for layout
+        updateScrolling();
+        const timers = [
+            setTimeout(updateScrolling, 100),
+            setTimeout(updateScrolling, 1000) // Back-up for slow loading images
+        ];
 
-    // Duplicate for seamless loop ONLY if animating
-    const displaySponsors = shouldAnimate
-        ? [...allSponsors, ...allSponsors, ...allSponsors]
-        : allSponsors;
+        window.addEventListener("resize", updateScrolling);
+        return () => {
+            timers.forEach(t => clearTimeout(t));
+            window.removeEventListener("resize", updateScrolling);
+        };
+    }, [allSponsors.length]);
 
     return (
         <section id="sponsors" className="py-24 bg-transparent relative overflow-hidden">
@@ -101,37 +111,33 @@ export default function Sponsors() {
                         <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-[0.4em] text-white uppercase italic">
                             Official <span className="text-blue-500">Sponsors</span>
                         </h2>
+                        <p className="text-[10px] md:text-xs text-slate-500 font-black tracking-widest uppercase">
+                            Swipe or drag to explore
+                        </p>
                     </motion.div>
                 </div>
 
                 <div
                     ref={containerRef}
-                    className="w-full overflow-hidden relative py-10"
+                    className={`w-full overflow-hidden relative px-10 py-10 flex ${isOverflowing ? 'cursor-grab active:cursor-grabbing' : 'justify-center'}`}
                 >
                     <motion.div
                         ref={contentRef}
-                        className={`flex items-center ${!shouldAnimate ? "justify-center" : ""}`}
-                        animate={shouldAnimate ? {
-                            x: [0, -250 * allSponsors.length]
-                        } : {}}
-                        transition={{
-                            duration: 40,
-                            repeat: Infinity,
-                            ease: "linear"
-                        }}
+                        drag={isOverflowing ? "x" : false}
+                        dragConstraints={dragConstraints}
+                        dragElastic={0.2}
+                        dragTransition={{ power: 0.3, timeConstant: 200 }}
+                        whileTap={isOverflowing ? { cursor: "grabbing" } : {}}
+                        className="flex items-center gap-2 md:gap-8 min-w-max"
                     >
-                        {displaySponsors.map((sponsor, i) => (
+                        {allSponsors.map((sponsor, i) => (
                             <SponsorLogoPlaceholder key={i} sponsor={sponsor} />
                         ))}
                     </motion.div>
 
-                    {/* Faded edges - only show if overflowing */}
-                    {shouldAnimate && (
-                        <>
-                            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
-                            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
-                        </>
-                    )}
+                    {/* Faded edges */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020408] via-[#020408]/80 to-transparent z-20 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#020408] via-[#020408]/80 to-transparent z-20 pointer-events-none" />
                 </div>
             </div>
 

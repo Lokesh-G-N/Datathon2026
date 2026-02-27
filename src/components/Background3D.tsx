@@ -117,15 +117,14 @@ export default function Background3D() {
                     return (
                         <motion.div
                             key={p.id}
-                            className="absolute rounded-full"
+                            className={`absolute rounded-full gpu gpu-opacity`}
                             style={{
                                 width: p.size,
                                 height: p.size,
                                 left: 0,
                                 top: 0,
-                                willChange: "transform",
                                 background: `radial-gradient(circle, ${p.color} 0%, transparent 80%)`,
-                                boxShadow: p.size > 3 ? `0 0 ${p.size * 2}px ${p.color}40` : 'none',
+                                boxShadow: p.size > 4 ? `0 0 ${p.size * 2}px ${p.color}40` : 'none',
                             }}
                             animate={{
                                 x: `${pos.x}vw`,
@@ -148,7 +147,7 @@ export default function Background3D() {
                 <motion.div
                     animate={{ x: ["-100%", "200%"] }}
                     transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent blur-md rotate-[-5deg]"
+                    className="absolute top-1/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent blur-md rotate-[-5deg] gpu"
                 />
                 <motion.div
                     animate={{ x: ["200%", "-100%"] }}
@@ -169,7 +168,7 @@ export default function Background3D() {
                             ease: "linear",
                             delay: streak.delay
                         }}
-                        className="absolute w-[1px] h-32 bg-gradient-to-b from-transparent via-blue-400 to-transparent"
+                        className="absolute w-[1px] h-32 bg-gradient-to-b from-transparent via-blue-400 to-transparent gpu"
                         style={{ left: `${streak.left}%` }}
                     />
                 ))}

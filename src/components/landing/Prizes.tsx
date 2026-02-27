@@ -63,7 +63,7 @@ function PrizeCard({ prize, index }: { prize: typeof prizes[0], index: number })
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className={`perspective-1000 ${prize.featured ? 'md:scale-110 z-20' : 'z-10'}`}
+            className={`perspective-1000 gpu ${prize.featured ? 'md:scale-110 z-20' : 'z-10'}`}
         >
             <motion.div
                 onMouseMove={handleMouseMove}
@@ -74,11 +74,11 @@ function PrizeCard({ prize, index }: { prize: typeof prizes[0], index: number })
                     rotateY: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : rotateY,
                     transformStyle: "preserve-3d"
                 }}
-                className={`relative group bg-black/40 backdrop-blur-md md:backdrop-blur-2xl rounded-[1.5rem] md:rounded-[2.5rem] border ${prize.borderColor} transition-all duration-300 p-0.5 md:p-1`}
+                className={`relative group bg-black/40 backdrop-blur-md md:backdrop-blur-2xl rounded-[1.5rem] md:rounded-[2.5rem] border ${prize.borderColor} transition-all duration-300 p-0.5 md:p-1 gpu`}
             >
                 {/* Radiant Spotlight Background */}
                 <motion.div
-                    className="absolute inset-0 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    className="absolute inset-0 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-700 gpu-opacity"
                     style={{
                         background: `radial-gradient(circle at center, ${prize.color}, transparent 70%)`
                     }}

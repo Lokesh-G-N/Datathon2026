@@ -14,7 +14,7 @@ export default function Hero() {
                         scale: [1, 1.2, 1]
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_70%)] hidden md:block"
+                    className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_70%)] hidden md:block gpu-opacity"
                 />
             </div>
 
@@ -23,7 +23,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col items-center"
+                    className="flex flex-col items-center gpu"
                 >
                     {/* Top Detail - Registration Deadline */}
                     <motion.div
@@ -50,7 +50,7 @@ export default function Hero() {
                         <motion.div
                             animate={{ opacity: [0.3, 0.6, 0.3] }}
                             transition={{ duration: 4, repeat: Infinity }}
-                            className="absolute -inset-10 bg-blue-500/10 blur-2xl md:blur-[100px] pointer-events-none"
+                            className="absolute -inset-10 bg-blue-500/10 blur-2xl md:blur-[100px] pointer-events-none gpu-opacity"
                         />
                     </h1>
 

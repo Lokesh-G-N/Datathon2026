@@ -73,13 +73,13 @@ function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="group w-full"
+            className="group w-full gpu"
         >
-            <Card className={`relative p-4 md:p-5 bg-white/5 backdrop-blur-sm border transition-all duration-300 rounded-2xl overflow-hidden ${type === 'staff' ? 'border-blue-500/10 group-hover:bg-blue-500/5 group-hover:border-blue-500/30' : 'border-white/5 group-hover:bg-white/10 group-hover:border-blue-500/20'}`}>
+            <Card className={`relative p-4 md:p-5 bg-white/5 backdrop-blur-sm border transition-all duration-300 rounded-2xl overflow-hidden gpu ${type === 'staff' ? 'border-blue-500/10 group-hover:bg-blue-500/5 group-hover:border-blue-500/30' : 'border-white/5 group-hover:bg-white/10 group-hover:border-blue-500/20'}`}>
                 <div className="flex items-center gap-4">
                     {type === 'staff' && (
                         <div className="shrink-0">
-                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-blue-500/10 border border-blue-500/20 overflow-hidden flex items-center justify-center relative group-hover:border-blue-500/40 transition-colors">
+                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-blue-500/10 border border-blue-500/20 overflow-hidden flex items-center justify-center relative group-hover:border-blue-500/40 transition-colors gpu">
                                 <img
                                     src={person.photo ?? "/OIP.jpg"}
                                     alt={person.name}

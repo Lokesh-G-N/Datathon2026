@@ -104,7 +104,7 @@ function CountdownTimer() {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const targetDate = new Date("March 7, 2026 00:00:00").getTime();
+        const targetDate = new Date("March 11, 2026 00:00:00").getTime();
 
         const interval = setInterval(() => {
             const now = new Date().getTime();
@@ -167,14 +167,14 @@ export default function ProblemStatements() {
                     </h2>
                 </motion.div>
 
-                <div className="flex flex-col items-center justify-center min-h-[400px] relative">
-                    <Card className="w-full max-w-2xl bg-black/40 border border-white/5 backdrop-blur-md md:backdrop-blur-2xl rounded-[1.5rem] md:rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group">
+                <div className="flex flex-col items-center justify-center min-h-[400px] relative gpu">
+                    <Card className="w-full max-w-2xl bg-black/40 border border-white/5 backdrop-blur-md md:backdrop-blur-2xl rounded-[1.5rem] md:rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group gpu">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 z-10" />
 
                         <motion.div
                             animate={{ y: ["-100%", "600%"] }}
                             transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                            className="absolute left-0 right-0 h-[50px] md:h-[100px] bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none z-0 hidden md:block"
+                            className="absolute left-0 right-0 h-[50px] md:h-[100px] bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none z-0 hidden md:block gpu"
                         />
 
                         <div className="relative z-10 flex flex-col items-center gap-8">
@@ -192,7 +192,7 @@ export default function ProblemStatements() {
                             <CountdownTimer />
 
                             <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md mt-4">
-                                Problem statements will be unveiled simultaneously on March 7th. Get ready.
+                                Problem statements will be unveiled simultaneously on March 11th. Get ready.
                             </p>
                         </div>
 
