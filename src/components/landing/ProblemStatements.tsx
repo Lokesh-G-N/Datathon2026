@@ -3,7 +3,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence, useMotionValue } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const problems = [
     {
@@ -99,11 +99,60 @@ const problems = [
     }
 ];
 
-import { Terminal, Database, Shield, Zap } from "lucide-react";
+import { Shield } from "lucide-react";
+function CountdownTimer() {
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const targetDate = new Date("March 7, 2026 00:00:00").getTime();
+
+        const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                return;
+            }
+
+            setTimeLeft({
+                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((distance % (1000 * 60)) / 1000)
+            });
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const timeUnits = [
+        { label: "Days", value: timeLeft.days },
+        { label: "Hrs", value: timeLeft.hours },
+        { label: "Min", value: timeLeft.minutes },
+        { label: "Sec", value: timeLeft.seconds }
+    ];
+
+    return (
+        <div className="flex gap-4 md:gap-8 justify-center mt-8">
+            {timeUnits.map((unit, i) => (
+                <div key={i} className="flex flex-col items-center">
+                    <div className="relative">
+                        <span className="text-2xl md:text-5xl font-black text-white italic tabular-nums">
+                            {unit.value.toString().padStart(2, '0')}
+                        </span>
+                        <div className="absolute -inset-2 bg-blue-500/10 blur-lg -z-10" />
+                    </div>
+                    <span className="text-[8px] md:text-[10px] font-black text-blue-500/60 uppercase tracking-[0.2em] mt-2">
+                        {unit.label}
+                    </span>
+                </div>
+            ))}
+        </div>
+    );
+}
 
 export default function ProblemStatements() {
-    const [activeIdx, setActiveIdx] = useState(0);
-
     return (
         <section id="problems" className="py-6 md:py-32 bg-transparent relative overflow-hidden">
             <div className="container px-4 mx-auto relative z-10 max-w-6xl">
@@ -136,13 +185,14 @@ export default function ProblemStatements() {
                             <div className="space-y-4">
                                 <p className="text-[11px] md:text-[10px] font-black text-blue-500 uppercase tracking-widest">Data Encryption Enabled</p>
                                 <h3 className="text-xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-tight">
-                                    Problems <br />
-                                    <span className="text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">Released Soon</span>
+                                    Release <span className="text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">Countdown</span>
                                 </h3>
                             </div>
 
-                            <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md">
-                                Participants will engage with problems derived directly from industrial and real world use cases.
+                            <CountdownTimer />
+
+                            <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md mt-4">
+                                Problem statements will be unveiled simultaneously on March 7th. Get ready.
                             </p>
                         </div>
 

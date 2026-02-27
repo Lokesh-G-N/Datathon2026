@@ -78,7 +78,7 @@ export default function Hero() {
                                 </span>
                                 <div className="hidden md:block w-[1px] h-8 bg-blue-500/20" />
                                 <span className="text-[10px] md:text-sm font-bold text-blue-400/80 uppercase tracking-[0.2em]">
-                                    Internship opportunities will be awarded
+                                    Internship opportunities will be created
                                 </span>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                         {/* Deadline Banner */}
                         <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
                             <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
-                                Register before Feb 27th
+                                Register before Feb 28th
                             </span>
                         </div>
                     </motion.div>
