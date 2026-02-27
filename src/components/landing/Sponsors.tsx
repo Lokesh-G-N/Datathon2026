@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const allSponsors = [
-    { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/Untitled design.png", color: "rgba(139, 92, 246, 0.4)", size: "large" }
+    { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/Untitled design.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
+    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/aveon-logo.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
 ];
 
 function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
