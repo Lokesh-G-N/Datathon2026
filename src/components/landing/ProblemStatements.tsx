@@ -191,9 +191,7 @@ export default function ProblemStatements() {
 
                             <CountdownTimer />
 
-                            <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md mt-4">
-                                Problem statements will be unveiled simultaneously on March 11th. Get ready.
-                            </p>
+                            Problem statements will be unveiled simultaneously on March 11th. Get ready.
                         </div>
 
                         {/* Corner Decals */}
