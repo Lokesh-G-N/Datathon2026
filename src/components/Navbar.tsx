@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -24,7 +24,6 @@ export default function Navbar() {
     const previous = scrollY.getPrevious() || 0;
     const diff = latest - previous;
 
-    // Only update if we've scrolled a reasonable amount to avoid jitter
     if (Math.abs(diff) > 5) {
       if (latest > previous && latest > 150) {
         if (!hidden) setHidden(true);
@@ -36,6 +35,11 @@ export default function Navbar() {
     const isScrolled = latest > 50;
     if (isScrolled !== scrolled) setScrolled(isScrolled);
   });
+
+  const handleRegisterClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    alert("Registration deadline is over");
+  };
 
   return (
     <motion.nav
@@ -67,7 +71,6 @@ export default function Navbar() {
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
               />
-              {/* Hover Data Glow */}
               <div className="absolute -inset-x-4 -inset-y-2 bg-blue-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur-md" />
             </a>
           ))}
@@ -84,11 +87,10 @@ export default function Navbar() {
         <div className="flex items-center gap-4 shrink-0 relative z-[110]">
           <Button
             asChild
-            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-4 py-3 md:px-8 md:py-6 text-[10px] md:text-sm h-auto transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] border-none relative overflow-hidden group"
+            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-4 py-3 md:px-8 md:py-6 text-[10px] md:text-sm h-auto transition-all hover:scale-105 active:scale-95 shadow-[0_0_30_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] border-none relative overflow-hidden group"
           >
-            <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank">
-              <span className="relative z-10">Register Now</span>
-              {/* Scanning Light Beam */}
+            <a href="#" onClick={handleRegisterClick}>
+              <span className="relative z-10">Registrations Closed</span>
               <motion.div
                 animate={{ x: ["-100%", "200%"] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -109,7 +111,6 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-y-0 left-0 z-[105] lg:hidden w-[75vw] bg-black/80 backdrop-blur-xl flex flex-col p-6 pt-24 border-r border-white/10 shadow-2xl"
           >
-            {/* Background Cybernetic Accents */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-[100px] pointer-events-none" />
 
@@ -145,8 +146,8 @@ export default function Navbar() {
                 asChild
                 className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-xl py-6 text-[10px] h-auto shadow-[0_0_30px_rgba(59,130,246,0.3)] border-none"
               >
-                <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank" onClick={() => setIsOpen(false)}>
-                  Register here
+                <a href="#" onClick={handleRegisterClick}>
+                  Registrations Closed
                 </a>
               </Button>
             </motion.div>

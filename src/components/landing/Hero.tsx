@@ -102,9 +102,9 @@ export default function Hero() {
                         </div>
 
                         {/* Deadline Banner */}
-                        <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600/50 backdrop-blur-xl">
+                        <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600 backdrop-blur-xl">
                             <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
-                                Register before Feb 28th
+                                Registrations Closed
                             </span>
                         </div>
                     </motion.div>
@@ -120,8 +120,14 @@ export default function Hero() {
                             asChild
                             className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-8 py-5 md:px-12 md:py-8 h-auto text-sm md:text-lg transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)] border-none relative overflow-hidden group"
                         >
-                            <a href="https://forms.gle/skZuVWsB53vJsH2j7" target="_blank">
-                                <span className="relative z-10">Register Now</span>
+                            <a
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    alert("Registration deadline is over");
+                                }}
+                            >
+                                <span className="relative z-10">Registrations Closed</span>
                                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                             </a>
                         </Button>
