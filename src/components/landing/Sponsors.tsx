@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 const allSponsors = [
     { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/Untitled design.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
-    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/aveon-logo.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
+    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/aveon-logo.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
+    { name: "Dsignz Media", tier: "Silver Sponsor", logo: "/images/sponsors/designzm-logo.jpeg", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
 ];
 
 function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
@@ -33,20 +34,19 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
                     </span>
                 </div>
 
-                {sponsor.logo ? (
-                    <div className="w-full flex-1 flex items-center justify-center overflow-hidden">
-                        <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="w-full max-h-[90%] object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-500 scale-95 group-hover:scale-105"
-                        />
-                    </div>
+                <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-2xl">
+                    <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="w-full h-full object-contain rounded-xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-500 scale-95 group-hover:scale-105"
+                    />
+                </div>
                 ) : (
-                    <div className="flex-1 flex items-center justify-center">
-                        <span className="font-black text-xl md:text-2xl text-white/70 group-hover:text-white transition-all duration-500 tracking-tighter uppercase italic">
-                            {sponsor.name}
-                        </span>
-                    </div>
+                <div className="flex-1 flex items-center justify-center">
+                    <span className="font-black text-xl md:text-2xl text-white/70 group-hover:text-white transition-all duration-500 tracking-tighter uppercase italic">
+                        {sponsor.name}
+                    </span>
+                </div>
                 )}
             </div>
 
