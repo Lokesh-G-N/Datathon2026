@@ -4,22 +4,21 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const allSponsors = [
-    { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/Untitled design.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
-    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/aveon-logo.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
-    { name: "Dsignz Media", tier: "Silver Sponsor", logo: "/images/sponsors/designzm-logo.jpeg", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
+    { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/1.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
+    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/2.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
+    { name: "Dsignz Media", tier: "Silver Sponsor", logo: "/images/sponsors/3.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
 ];
 
 function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
     const sizeClasses = {
-        large: "h-48 w-80 md:h-64 md:w-[400px]",
-        medium: "h-40 w-64 md:h-52 md:w-[320px]",
-        small: "h-32 w-52 md:h-44 md:w-[240px]"
+        large: "w-80 h-[180px] md:w-[500px] md:h-[281px]",
+        medium: "w-56 h-[126px] md:w-[380px] md:h-[214px]",
+        small: "w-40 h-[90px] md:w-[280px] md:h-[157px]"
     }[sponsor.size as "large" | "medium" | "small"];
 
     return (
         <div className={`relative flex items-center justify-center ${sizeClasses} mx-6 group flex-shrink-0`}>
             {/* Holographic Background */}
-            <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-2xl opacity-40 group-hover:opacity-100 transition-all duration-500 backdrop-blur-sm" />
 
             {/* Glow Effect */}
             <div
@@ -27,26 +26,27 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
                 style={{ background: `radial-gradient(circle at center, ${sponsor.color}, transparent 70%)` }}
             />
 
-            <div className="relative z-10 flex flex-col items-center w-full h-full p-6 md:p-8 text-center">
-                <div className="w-full mb-4">
-                    <span className="text-[10px] md:text-[12px] font-bold text-blue-400/80 group-hover:text-blue-400 transition-all duration-500 uppercase tracking-[0.3em]">
+            <div className="relative z-10 flex flex-col items-center w-full h-full p-2 text-center">
+                <div className="w-full mb-6 -mt-8">
+                    <span className="text-[12px] md:text-sm font-black text-blue-400 group-hover:text-blue-300 transition-all duration-500 uppercase tracking-[0.5em] drop-shadow-[0_0_10px_rgba(59,130,246,0.3)]">
                         {sponsor.tier}
                     </span>
                 </div>
 
-                <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-2xl">
-                    <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="w-full h-full object-contain rounded-xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-500 scale-95 group-hover:scale-105"
-                    />
-                </div>
+                {sponsor.logo ? (
+                    <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-2xl relative">
+                        <img
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            className="absolute inset-0 w-full h-full object-cover bg-white/5 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15_rgba(59,130,246,0.3)] transition-all duration-500 scale-100 group-hover:scale-105"
+                        />
+                    </div>
                 ) : (
-                <div className="flex-1 flex items-center justify-center">
-                    <span className="font-black text-xl md:text-2xl text-white/70 group-hover:text-white transition-all duration-500 tracking-tighter uppercase italic">
-                        {sponsor.name}
-                    </span>
-                </div>
+                    <div className="flex-1 flex items-center justify-center">
+                        <span className="font-black text-xl md:text-2xl text-white/70 group-hover:text-white transition-all duration-500 tracking-tighter uppercase italic">
+                            {sponsor.name}
+                        </span>
+                    </div>
                 )}
             </div>
 
