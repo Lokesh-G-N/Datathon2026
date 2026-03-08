@@ -104,7 +104,7 @@ function CountdownTimer() {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const targetDate = new Date("March 10, 2026 00:00:00").getTime();
+        const targetDate = new Date("March 12, 2026 00:00:00").getTime();
 
         const interval = setInterval(() => {
             const now = new Date().getTime();
@@ -192,7 +192,7 @@ export default function ProblemStatements() {
                             <CountdownTimer />
 
                             <p className="text-[11px] md:text-xl text-slate-400 font-light italic max-w-md mt-4">
-                                Problem statements will be unveiled simultaneously on March 10th. Get ready.
+                                Problem statements will be unveiled simultaneously on March 12th. Get ready.
                             </p>
                         </div>
 
