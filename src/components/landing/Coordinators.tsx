@@ -4,61 +4,7 @@ import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-const staffCategories = [
-    {
-        title: "Event Convener",
-        members: [
-            { name: "Dr. S. Suganthi", role: "Event Convener", degree: "M.Sc., M.Phil.,Ph.D.", photo: "/Suganthi.jpg" }
-        ]
-    },
-    {
-        title: "Event Ideation & Industry Collaboration",
-        members: [
-            { name: "Dr. D. Sudha Devi", role: "Concept Lead", degree: "M.C.A., M.Phil., Ph.D.", photo: "/Sudhadevi.jpg" }
-        ]
-    },
-    {
-        title: "Event Coordinators",
-        members: [
-            { name: "Dr. J. Rathika", role: "Event Coordinator", degree: "M.Phil., Ph.D.", photo: "/rathika.jpg" },
-            { name: "Dr. M. Marimuthu", role: "Event Coordinator", degree: "M.C.A., M.Phil., Ph.D.", photo: "/marimuthu.jpg" }
-        ]
-    },
-    {
-        title: "Judging and Jury Coordinator",
-        members: [
-            { name: "Dr. S. Gayathri Devi", role: "Judging & Jury Coordinator", degree: "M.Sc., M.Phil., Ph.D.", photo: "/gayathri devi.jpg" }
-        ]
-    },
-    {
-        title: "Inauguration and Valedictory Coordinators",
-        members: [
-            { name: "Dr. M. Srividya", role: "Ceremony Lead", degree: "M.Phil., Ph.D.", photo: "/srividhya.jpg" },
-            { name: "Dr. J. Rathika", role: "Event Coordinator", degree: "M.Phil., Ph.D.", photo: "/rathika.jpg" },
-            { name: "Dr. M. Marimuthu", role: "Event Coordinator", degree: "M.C.A., M.Phil., Ph.D.", photo: "/marimuthu.jpg" }
-        ]
-    },
-    {
-        title: "Sponsorship and Finance Coordinator",
-        members: [
-            { name: "Dr. K. Rajarajeshwari", role: "Finance Coordinator", degree: "M.Sc., M.Phil., Ph.D.", photo: "/rajarajeshwari.jpg" }
-        ]
-    },
-    {
-        title: "Registration & Participant Management",
-        members: [
-            { name: "Ms. S. Deivarani", role: "Registration Lead", degree: "M.C.A., M.Phil.", photo: "/deivarani.jpg" },
-            { name: "Ms. K. H. Vani", role: "Registration Lead", degree: "M.Sc., M.Phil.", photo: "/vani.jpg" }
-        ]
-    },
-    {
-        title: "Food and Hospitality Coordinators",
-        members: [
-            { name: "Dr. P. Velvadivu", role: "Hospitality Lead", degree: "M.C.A., M.Phil., Ph.D.", photo: "/velavadivu.jpg" },
-            { name: "Dr. D. Sudha Devi", role: "Food lead", degree: "M.C.A., M.Phil., Ph.D.", photo: "/Sudhadevi.jpg" }
-        ]
-    }
-];
+
 
 const studentCoordinators = [
     { name: "PRAISOODI A", role: "Student Coordinator", phone: "95972 81888" },
@@ -138,30 +84,11 @@ export default function Coordinators() {
                 </motion.div>
 
                 <div className="space-y-6 md:space-y-4">
-                    {/* Faculty Categories */}
-                    {staffCategories.map((category, catIdx) => (
-                        <div key={catIdx} className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-4 border-b border-white/5 last:border-0 lg:border-b-0">
-                            {/* Category Title - Left Side */}
-                            <div className="md:w-1/3 lg:w-1/4 shrink-0">
-                                <h3 className="text-xs md:text-sm font-black text-blue-500 uppercase tracking-[0.2em] italic leading-tight">
-                                    {category.title}
-                                </h3>
-                            </div>
-
-                            {/* Members Grid - Right Side */}
-                            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3">
-                                {category.members.map((staff, i) => (
-                                    <ContactCard key={i} person={staff} type="staff" />
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-
                     {/* Student Section */}
-                    <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-8 mt-12 border-t border-blue-500/10">
+                    <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 py-4">
                         <div className="md:w-1/3 lg:w-1/4 shrink-0">
-                            <h3 className="text-xs md:text-sm font-black text-slate-500 uppercase tracking-[0.2em] italic">
-                                Student Leads
+                            <h3 className="text-xs md:text-sm font-black text-blue-500 uppercase tracking-[0.2em] italic">
+                                Student Coordinators
                             </h3>
                         </div>
                         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3">
