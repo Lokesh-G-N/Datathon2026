@@ -15,7 +15,7 @@ const faqs = [
     { q: "When and where will the event be held?", a: "The event will be conducted on 14th & 15th March 2026 at Coimbatore Institute of Technology (CIT), Coimbatore." },
     { q: "Who can participate?", a: "Undergraduate and postgraduate students from recognized institutions can participate. Students from any department or discipline are welcome." },
     { q: "What is the team size?", a: "Teams can have 2 to 4 members." },
-    { q: "How and when will problem statements be released?", a: "Problem statements will be released a week before the event on the official website." },
+    { q: "How and when will problem statements be released?", a: "Problem statements will be released on March 12th at 12 PM on the official website." },
     { q: "Are food and other facilities provided?", a: "Yes. Lunch, refreshments, dinner, and breakfast will be provided. Participant kits and internet access will also be sustained." },
     { q: "Will participants receive certificates?", a: "Yes, participation certificates will be provided to all teams." },
 ];
