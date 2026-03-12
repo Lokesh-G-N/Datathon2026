@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react";
 const allSponsors = [
     { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/1.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
     { name: "EXL", tier: "Platinum Sponsor", logo: "/images/sponsors/4.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
-    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/2.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
-    { name: "Dsignz Media", tier: "Silver Sponsor", logo: "/images/sponsors/3.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
+    { name: "Dsignz Media", tier: "Silver Sponsor", logo: "/images/sponsors/3.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
+    { name: "Profitstory", tier: "Silver Sponsor", logo: "/images/sponsors/5.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" },
+    { name: "Aveon Infotech", tier: "Silver Sponsor", logo: "/images/sponsors/2.png", color: "rgba(139, 92, 246, 0.4)", size: "medium" }
+
 ];
 
 function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
