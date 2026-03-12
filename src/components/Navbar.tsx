@@ -11,7 +11,7 @@ const links = [
   { name: "Problems", href: "/#problems" },
   { name: "Prizes", href: "/#prizes" },
   { name: "Guidelines", href: "/#rules" },
-  { name: "Coordinators", href: "/coordinators" },
+  { name: "Coordinators", href: "/#coordinators" },
 ];
 
 export default function Navbar() {
@@ -35,11 +35,6 @@ export default function Navbar() {
     const isScrolled = latest > 50;
     if (isScrolled !== scrolled) setScrolled(isScrolled);
   });
-
-  const handleRegisterClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    alert("Registration deadline is over");
-  };
 
   return (
     <motion.nav
@@ -83,22 +78,6 @@ export default function Navbar() {
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-
-        <div className="flex items-center gap-4 shrink-0 relative z-[110]">
-          <Button
-            asChild
-            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-4 py-3 md:px-8 md:py-6 text-[10px] md:text-sm h-auto transition-all hover:scale-105 active:scale-95 shadow-[0_0_30_rgba(59,130,246,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] border-none relative overflow-hidden group"
-          >
-            <a href="#" onClick={handleRegisterClick}>
-              <span className="relative z-10">Registrations Closed</span>
-              <motion.div
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-y-0 w-8 bg-white/20 skew-x-12 pointer-events-none"
-              />
-            </a>
-          </Button>
-        </div>
       </div>
 
       {/* Mobile Navigation Overlay */}
@@ -136,21 +115,6 @@ export default function Navbar() {
               ))}
             </nav>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-auto"
-            >
-              <Button
-                asChild
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-xl py-6 text-[10px] h-auto shadow-[0_0_30px_rgba(59,130,246,0.3)] border-none"
-              >
-                <a href="#" onClick={handleRegisterClick}>
-                  Registrations Closed
-                </a>
-              </Button>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

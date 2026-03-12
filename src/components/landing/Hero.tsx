@@ -116,23 +116,7 @@ export default function Hero() {
                         transition={{ delay: 0.9 }}
                         className="flex flex-col md:flex-row gap-6 items-center"
                     >
-                        <Button
-                            asChild
-                            className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase italic tracking-widest rounded-full px-8 py-5 md:px-12 md:py-8 h-auto text-sm md:text-lg transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)] border-none relative overflow-hidden group"
-                        >
-                            <a
-                                href="#"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    alert("Registration deadline is over");
-                                }}
-                            >
-                                <span className="relative z-10">Registrations Closed</span>
-                                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
-                            </a>
-                        </Button>
-
-                        <div className="flex flex-col items-center md:items-start px-6 py-2 border-none md:border-l border-white/10 ml-0 md:ml-4">
+                        <div className="flex flex-col items-center md:items-start px-6 py-2 border-none md:border-white/10 ml-0 md:ml-4">
                             <span className="text-[8px] text-slate-500 font-black tracking-widest uppercase">Venue</span>
                             <span className="text-white font-bold uppercase tracking-tight text-[10px] md:text-sm">Coimbatore Institute of Technology</span>
                         </div>
