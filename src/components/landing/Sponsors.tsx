@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const allSponsors = [
     { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/1.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
@@ -64,43 +64,8 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
 }
 
 export default function Sponsors() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
-    const [isOverflowing, setIsOverflowing] = useState(false);
-    const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
-
-    useEffect(() => {
-        const updateScrolling = () => {
-            if (containerRef.current && contentRef.current) {
-                const containerWidth = containerRef.current.clientWidth;
-                const contentWidth = contentRef.current.scrollWidth;
-                const overflowing = contentWidth > containerWidth;
-
-                setIsOverflowing(overflowing);
-
-                // Calculate constraints
-                // We want to allow dragging from the rightmost edge to the leftmost edge
-                // Padded by the container's padding to keep items visible
-                setDragConstraints({
-                    left: -(contentWidth - containerWidth + 80), // 80 accounting for px-10 on both sides
-                    right: 0
-                });
-            }
-        };
-
-        // Run immediately and after a short delay to account for layout
-        updateScrolling();
-        const timers = [
-            setTimeout(updateScrolling, 100),
-            setTimeout(updateScrolling, 1000) // Back-up for slow loading images
-        ];
-
-        window.addEventListener("resize", updateScrolling);
-        return () => {
-            timers.forEach(t => clearTimeout(t));
-            window.removeEventListener("resize", updateScrolling);
-        };
-    }, [allSponsors.length]);
+    // Duplicate sponsors for seamless looping
+    const duplicatedSponsors = [...allSponsors, ...allSponsors];
 
     return (
         <section id="sponsors" className="py-24 bg-transparent relative overflow-hidden">
@@ -115,25 +80,27 @@ export default function Sponsors() {
                             Official <span className="text-blue-500">Sponsors</span>
                         </h2>
                         <p className="text-[10px] md:text-xs text-slate-500 font-black tracking-widest uppercase">
-                            Swipe or drag to explore
+                            Supporting our vision to innovate
                         </p>
                     </motion.div>
                 </div>
 
-                <div
-                    ref={containerRef}
-                    className={`w-full overflow-hidden relative px-10 py-10 flex ${isOverflowing ? 'cursor-grab active:cursor-grabbing' : 'justify-center'}`}
-                >
+                <div className="w-full overflow-hidden relative py-10">
                     <motion.div
-                        ref={contentRef}
-                        drag={isOverflowing ? "x" : false}
-                        dragConstraints={dragConstraints}
-                        dragElastic={0.2}
-                        dragTransition={{ power: 0.3, timeConstant: 200 }}
-                        whileTap={isOverflowing ? { cursor: "grabbing" } : {}}
-                        className="flex items-center gap-2 md:gap-8 min-w-max"
+                        className="flex items-center gap-8 min-w-max"
+                        animate={{
+                            x: ["0%", "-50%"],
+                        }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 30,
+                                ease: "linear",
+                            },
+                        }}
                     >
-                        {allSponsors.map((sponsor, i) => (
+                        {duplicatedSponsors.map((sponsor, i) => (
                             <SponsorLogoPlaceholder key={i} sponsor={sponsor} />
                         ))}
                     </motion.div>
