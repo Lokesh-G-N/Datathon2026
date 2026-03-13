@@ -34,18 +34,22 @@ export default function TeamLookup() {
 
     // Artificial delay for premium loading feel
     setTimeout(() => {
-      const processedSearch = term.toLowerCase().replace(/\s+/g, '');
+      // Robust cleaning: remove all non-alphanumeric characters
+      const clean = (str: string) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const processedSearch = clean(term);
       const allRegs = registrations as Registration[];
 
+      // Find team by comparing cleaned version of search term against pre-cleaned lookupName
       const exactMatch = allRegs.find(t => t.lookupName === processedSearch);
 
       if (exactMatch) {
         setFoundTeam(exactMatch);
         setSuggestions([]);
       } else {
+        // Fallback to partial matches on pre-cleaned lookup names
         const partialMatches = allRegs
           .filter(t => t.lookupName.includes(processedSearch))
-          .sort((a, b) => a.teamName.length - b.teamName.length) // prioritize shorter/closer matches
+          .sort((a, b) => a.teamName.length - b.teamName.length)
           .slice(0, 5);
 
         setFoundTeam(null);
@@ -105,7 +109,7 @@ export default function TeamLookup() {
               </div>
               <Input
                 type="text"
-                placeholder="Enter exact Team Name..."
+                placeholder="Enter Team Name"
                 className="bg-transparent border-none text-white text-lg h-14 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/20"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
