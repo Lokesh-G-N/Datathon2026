@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
 
-const PARTICLE_COUNT = 120; // Increased for density, optimized for performance
+const PARTICLE_COUNT = 40; // Reduced for performance optimization
 
 interface ParticleData {
     id: number;

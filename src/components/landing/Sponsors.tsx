@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 const allSponsors = [
     { name: "Karthipuram", tier: "Title Sponsor", logo: "/images/sponsors/1.png", color: "rgba(139, 92, 246, 0.4)", size: "large" },
@@ -12,7 +13,7 @@ const allSponsors = [
 
 ];
 
-function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
+function SponsorLogoPlaceholder({ sponsor }: { sponsor: { name: string, tier: string, logo?: string, color: string, size: string } }) {
     const sizeClasses = {
         large: "w-80 h-[180px] md:w-[500px] md:h-[281px]",
         medium: "w-56 h-[126px] md:w-[380px] md:h-[214px]",
@@ -38,10 +39,12 @@ function SponsorLogoPlaceholder({ sponsor }: { sponsor: any }) {
 
                 {sponsor.logo ? (
                     <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-2xl relative">
-                        <img
+                        <Image
                             src={sponsor.logo}
                             alt={sponsor.name}
-                            className="absolute inset-0 w-full h-full object-cover bg-white/5 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15_rgba(59,130,246,0.3)] transition-all duration-500 scale-100 group-hover:scale-105"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="absolute inset-0 object-cover bg-white/5 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15_rgba(59,130,246,0.3)] transition-all duration-500 scale-100 group-hover:scale-105"
                         />
                     </div>
                 ) : (

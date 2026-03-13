@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const schedule = [
     { time: "09:00 AM", event: "Tactical Check-in", desc: "Registration and welcome kits distribution." },
@@ -135,9 +136,11 @@ export default function Timeline() {
                             <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-4 h-12 bg-orange-500/30 blur-xl rounded-full animate-pulse hidden md:block" />
                             <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full scale-125 opacity-40 hidden md:block" />
 
-                            <img
+                            <Image
                                 src="/rocket-astronaut.png"
                                 alt="Rocket Astronaut"
+                                width={96}
+                                height={96}
                                 className="w-12 md:w-24 h-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
                             />
                         </motion.div>

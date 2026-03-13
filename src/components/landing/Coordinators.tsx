@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 
 
@@ -13,7 +14,7 @@ const studentCoordinators = [
     { name: "Sahithya V", role: "Student Coordinator", phone: "80723 21655" }
 ];
 
-function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' }) {
+function ContactCard({ person, type }: { person: { name: string, role?: string, degree?: string, phone?: string, photo?: string }, type: 'staff' | 'student' }) {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -26,10 +27,12 @@ function ContactCard({ person, type }: { person: any, type: 'staff' | 'student' 
                     {type === 'staff' && (
                         <div className="shrink-0">
                             <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-blue-500/10 border border-blue-500/20 overflow-hidden flex items-center justify-center relative group-hover:border-blue-500/40 transition-colors gpu">
-                                <img
+                                <Image
                                     src={person.photo ?? "/OIP.jpg"}
                                     alt={person.name}
-                                    className="w-full h-full object-cover transition-all duration-500"
+                                    fill
+                                    sizes="(max-width: 768px) 48px, 64px"
+                                    className="object-cover transition-all duration-500"
                                 />
                                 <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-blue-500/50" />
                                 <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-blue-500/50" />

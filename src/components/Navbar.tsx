@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { name: "About", href: "/#about" },
@@ -48,9 +49,12 @@ export default function Navbar() {
     >
       <div className="container px-4 mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center group cursor-pointer shrink-0">
-          <img
+          <Image
             src="/logo.png"
             alt="Datathon Logo"
+            width={200}
+            height={48}
+            priority
             className="h-8 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
           />
         </div>
