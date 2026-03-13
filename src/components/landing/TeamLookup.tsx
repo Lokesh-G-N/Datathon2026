@@ -246,7 +246,7 @@ export default function TeamLookup() {
                           </div>
                         </div>
                         <Button variant="ghost" className="text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                          Access Team
+                          View
                         </Button>
                       </div>
                     </motion.div>
