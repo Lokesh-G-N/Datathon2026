@@ -11,12 +11,14 @@ import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/Footer";
 import Sponsors from "@/components/landing/Sponsors";
 import Coordinators from "@/components/landing/Coordinators";
+import TeamLookup from "@/components/landing/TeamLookup";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <TeamLookup />
       <Sponsors />
       <About />
       <ProblemStatements />

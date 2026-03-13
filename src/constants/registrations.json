@@ -1,0 +1,786 @@
+[
+  {
+    "roomNumber": "305",
+    "teamName": "Team AI-VENGERS",
+    "leaderName": "Mrudhula D",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "teamai-vengers"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Elevate",
+    "leaderName": "Tharanighashree A",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "elevate"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Tech Syndicate",
+    "leaderName": "Shankaranarayanan",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "techsyndicate"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Sraksha",
+    "leaderName": "Nalluri Sravanthi",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "sraksha"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "CRIMSON LION",
+    "leaderName": "A. AZHAGU SABAREESH",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "crimsonlion"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Icecubes",
+    "leaderName": "Srinidhi K",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "icecubes"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Elite 2",
+    "leaderName": "Nantika K R",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "elite2"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Hawk eyes",
+    "leaderName": "Fida Zamer",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "hawkeyes"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "MOON WALKERS",
+    "leaderName": "Pragnya",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "moonwalkers"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Bloody Sweet",
+    "leaderName": "Srihari S",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "bloodysweet"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Curious Coders",
+    "leaderName": "Bharath K",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "curiouscoders"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Stack Masters",
+    "leaderName": "Jagadeesh R",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "stackmasters"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "TRY PANROM",
+    "leaderName": "Varsha S",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "trypanrom"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Team HRY",
+    "leaderName": "Hemamalini M",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "teamhry"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "4Sight Analytics",
+    "leaderName": "Kathiravan T",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "4sightanalytics"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "AlphaRangers MEC",
+    "leaderName": "Raguram P",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "alpharangersmec"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Data hackers",
+    "leaderName": "Tharun kumar . M",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "datahackers"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "DADDIES",
+    "leaderName": "NITHISH KANNA.V.K",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "daddies"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "2.0 Coders",
+    "leaderName": "Shri Ilakkia",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "2.0coders"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "STRATIFY",
+    "leaderName": "DHRUV SHARMA",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "stratify"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Hack Dragons",
+    "leaderName": "Gokulnaath N",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "hackdragons"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Grey matter",
+    "leaderName": "Yogeshwar.s",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "greymatter"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Brocode",
+    "leaderName": "Annie Sherlyn",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "brocode"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "404 Brain not Found",
+    "leaderName": "Vishnu Thangaraj",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "404brainnotfound"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "RTX 6090",
+    "leaderName": "Varun S",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "rtx6090"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "LogicX",
+    "leaderName": "Atshayaa B",
+    "teamSize": "2",
+    "deskNumber": "4",
+    "lookupName": "logicx"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "BBJ",
+    "leaderName": "Janani CR",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "bbj"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "QuadCore",
+    "leaderName": "LARA DHARSHINI P",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "quadcore"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "ZERO",
+    "leaderName": "GOWTHAM D",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "zero"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Logic units",
+    "leaderName": "Sivani Vidyarani Raja",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "logicunits"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "AlgoRhythm",
+    "leaderName": "AlgoRhythm",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "algorhythm"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Nebula",
+    "leaderName": "Dakshatha S",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "nebula"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "RMD GUYZ",
+    "leaderName": "RAMVARSHITH N",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "rmdguyz"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "One and Zero",
+    "leaderName": "Kalaiselvan K",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "oneandzero"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "UB",
+    "leaderName": "CHEDDE LAKSHMAN",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "ub"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Vision-X",
+    "leaderName": "Umang Jaiswal N",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "vision-x"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Elite Quadro",
+    "leaderName": "Krithik U",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "elitequadro"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Chicken Biryani",
+    "leaderName": "Shane Israel",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "chickenbiryani"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Neptune",
+    "leaderName": "PRANAV D",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "neptune"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "DataX",
+    "leaderName": "Sakthivel P",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "datax"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Dummy baba",
+    "leaderName": "Shyamsundar S S",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "dummybaba"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Data Dynomos",
+    "leaderName": "UMARCHI S",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "datadynomos"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Tech Spartans",
+    "leaderName": "HariHaran AM",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "techspartans"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "Dasara",
+    "leaderName": "Sangamithra C",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "dasara"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Blabla",
+    "leaderName": "Madhav Kannan K",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "blabla"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Epic innovators",
+    "leaderName": "KIRIT P S",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "epicinnovators"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Spectrum Syntax",
+    "leaderName": "Deepak P",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "spectrumsyntax"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Jean Sparks",
+    "leaderName": "Jagan S",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "jeansparks"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "She_squared",
+    "leaderName": "Prisha.A",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "she_squared"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Porygon",
+    "leaderName": "Sham Sundar Senthil Kumar s",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "porygon"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Dataverse",
+    "leaderName": "Santhanu U S",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "dataverse"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "ThinkSync",
+    "leaderName": "Adhithya Veeramalai Manickam",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "thinksync"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Techwerk",
+    "leaderName": "Karthik S",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "techwerk"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Opalite",
+    "leaderName": "Durga Rajesh Mallya",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "opalite"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Spartans",
+    "leaderName": "Karthickraj S",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "spartans"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Outlaws",
+    "leaderName": "DHARANESH V N",
+    "teamSize": "4",
+    "deskNumber": "4",
+    "lookupName": "outlaws"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Tech Stack",
+    "leaderName": "Subburaj J",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "techstack"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Jalebi Rabdi",
+    "leaderName": "Asrith Tanniru",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "jalebirabdi"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Code risers",
+    "leaderName": "Aditya kari",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "coderisers"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "ByteFlow",
+    "leaderName": "Bharath Kumar",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "byteflow"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Strikers",
+    "leaderName": "Priyanka S",
+    "teamSize": "2",
+    "deskNumber": "4",
+    "lookupName": "strikers"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Syntax error",
+    "leaderName": "K Akash",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "syntaxerror"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Cruise IT",
+    "leaderName": "Vishal CJ",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "cruiseit"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Hack storm",
+    "leaderName": "P Charan Kumar",
+    "teamSize": "4",
+    "deskNumber": "3",
+    "lookupName": "hackstorm"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Error 404",
+    "leaderName": "Pramoth Vishva V",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "error404"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "VALORANT",
+    "leaderName": "SRI SUNDEEP KRISHNA",
+    "teamSize": "4",
+    "deskNumber": "3",
+    "lookupName": "valorant"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "AiQubit",
+    "leaderName": "Anushya devi",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "aiqubit"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "Data Dominators",
+    "leaderName": "Vignesh S K",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "datadominators"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Nexus",
+    "leaderName": "Sunilkumar",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "nexus"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Balhalla",
+    "leaderName": "Ruban",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "balhalla"
+  },
+  {
+    "roomNumber": "305",
+    "teamName": "403 Forbidden",
+    "leaderName": "Anish Narayan S",
+    "teamSize": "3",
+    "deskNumber": "4",
+    "lookupName": "403forbidden"
+  },
+  {
+    "roomNumber": "303",
+    "teamName": "TECHWIZARDS",
+    "leaderName": "Arunachalam S",
+    "teamSize": "2",
+    "deskNumber": "4",
+    "lookupName": "techwizards"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Null_pointerz",
+    "leaderName": "Krishna Subramani",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "null_pointerz"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "CODE STORM",
+    "leaderName": "SINDHUJA M",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "codestorm"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Techno-Titans",
+    "leaderName": "Sundaram R",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "techno-titans"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "TechTitans",
+    "leaderName": "NEERAJ KUMAR",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "techtitans"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Power House",
+    "leaderName": "Sanjay S",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "powerhouse"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Hack Hers",
+    "leaderName": "Abina J",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "hackhers"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "Team Innovex",
+    "leaderName": "Rupa Atchaya A S",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "teaminnovex"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Team Coders",
+    "leaderName": "Anusha Battula",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "teamcoders"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Data Alchemists",
+    "leaderName": "Yaashini G",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "dataalchemists"
+  },
+  {
+    "roomNumber": "402",
+    "teamName": "RITians",
+    "leaderName": "Abiram R",
+    "teamSize": "2",
+    "deskNumber": "3",
+    "lookupName": "ritians"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "Bugvengers",
+    "leaderName": "Lohit S",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "bugvengers"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "THUNDERS",
+    "leaderName": "PAGADI NITHYA SREE",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "thunders"
+  },
+  {
+    "roomNumber": "406",
+    "teamName": "AVENGERS",
+    "leaderName": "MARAPAREDDY HARSHITHA",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "avengers"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Mechatron",
+    "leaderName": "Monish C",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "mechatron"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "CODE MAVERICKS",
+    "leaderName": "SACHIN",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "codemavericks"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "TSK",
+    "leaderName": "Arunachalam S",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "tsk"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Teen's Innovations",
+    "leaderName": "Preena M",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "teen'sinnovations"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Red Viper's",
+    "leaderName": "Mathiyazhagan T",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "redviper's"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Ctrl Alt Elite",
+    "leaderName": "CK Vinay",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "ctrlaltelite"
+  },
+  {
+    "roomNumber": "405",
+    "teamName": "Alchemist",
+    "leaderName": "Pagadala Greeshmanth",
+    "teamSize": "4",
+    "deskNumber": "1",
+    "lookupName": "alchemist"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "Monstar team",
+    "leaderName": "Ajay Seepana",
+    "teamSize": "4",
+    "deskNumber": "3",
+    "lookupName": "monstarteam"
+  },
+  {
+    "roomNumber": "403",
+    "teamName": "The Spartans",
+    "leaderName": "Gogula Vignesh G",
+    "teamSize": "3",
+    "deskNumber": "3",
+    "lookupName": "thespartans"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Under Takers",
+    "leaderName": "AKHILESHWAR SUBBIAH VS",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "undertakers"
+  },
+  {
+    "roomNumber": "407",
+    "teamName": "Alpha Squad",
+    "leaderName": "Dhivagar M",
+    "teamSize": "4",
+    "deskNumber": "2",
+    "lookupName": "alphasquad"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "Placeholder",
+    "leaderName": "Harivenkat R",
+    "teamSize": "2",
+    "deskNumber": "1",
+    "lookupName": "placeholder"
+  },
+  {
+    "roomNumber": "408",
+    "teamName": "The missing semicolon",
+    "leaderName": "VIJAY V S",
+    "teamSize": "2",
+    "deskNumber": "1",
+    "lookupName": "themissingsemicolon"
+  }
+]
