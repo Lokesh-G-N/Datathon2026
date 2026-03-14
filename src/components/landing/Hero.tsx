@@ -2,6 +2,71 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
+function Countdown() {
+    const [mounted, setMounted] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({ hours: '00', minutes: '00', seconds: '00' });
+
+    useEffect(() => {
+        setMounted(true);
+        const targetDate = new Date('2026-03-15T10:30:00').getTime();
+
+        const updateTime = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                setTimeLeft({ hours: '00', minutes: '00', seconds: '00' });
+                return;
+            }
+
+            const hours = Math.floor(distance / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            setTimeLeft({
+                hours: hours.toString().padStart(2, '0'),
+                minutes: minutes.toString().padStart(2, '0'),
+                seconds: seconds.toString().padStart(2, '0')
+            });
+        };
+
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    if (!mounted) {
+        return (
+            <div className="flex items-center justify-center gap-2 md:gap-4 relative z-10 w-full min-h-[90px]">
+                {[1, 2, 3].map((i) => (
+                    <div key={i} className="flex flex-col items-center px-4 py-3 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md w-[80px] md:w-[100px] h-[70px] md:h-[90px] animate-pulse" />
+                ))}
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex items-center justify-center gap-2 md:gap-4 relative z-10 w-full min-h-[90px]">
+            <div className="flex flex-col items-center px-4 py-3 bg-gradient-to-b from-blue-500/10 to-transparent border border-blue-500/20 rounded-xl backdrop-blur-md min-w-[80px] md:min-w-[100px] shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                <span className="text-3xl md:text-5xl font-black text-white font-mono tracking-tighter shadow-blue-500/50 drop-shadow-md">{timeLeft.hours}</span>
+                <span className="text-[8px] md:text-[10px] text-blue-400 uppercase tracking-widest font-bold mt-1">Hours</span>
+            </div>
+            <span className="text-2xl md:text-4xl font-black text-blue-500/50 animate-[pulse_1s_ease-in-out_infinite] mb-6">:</span>
+            <div className="flex flex-col items-center px-4 py-3 bg-gradient-to-b from-blue-500/10 to-transparent border border-blue-500/20 rounded-xl backdrop-blur-md min-w-[80px] md:min-w-[100px] shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                <span className="text-3xl md:text-5xl font-black text-white font-mono tracking-tighter shadow-blue-500/50 drop-shadow-md">{timeLeft.minutes}</span>
+                <span className="text-[8px] md:text-[10px] text-blue-400 uppercase tracking-widest font-bold mt-1">Mins</span>
+            </div>
+            <span className="text-2xl md:text-4xl font-black text-blue-500/50 animate-[pulse_1s_ease-in-out_infinite] mb-6">:</span>
+            <div className="flex flex-col items-center px-4 py-3 bg-gradient-to-b from-blue-500/10 to-transparent border border-blue-500/20 rounded-xl backdrop-blur-md min-w-[80px] md:min-w-[100px] shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                <span className="text-3xl md:text-5xl font-black text-white font-mono tracking-tighter shadow-blue-500/50 drop-shadow-md">{timeLeft.seconds}</span>
+                <span className="text-[8px] md:text-[10px] text-blue-400 uppercase tracking-widest font-bold mt-1">Secs</span>
+            </div>
+        </div>
+    );
+}
 
 export default function Hero() {
     return (
@@ -102,10 +167,20 @@ export default function Hero() {
                         </div>
 
                         {/* Deadline Banner */}
-                        <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600 backdrop-blur-xl">
+                        <div className="relative px-5 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-black/60 border-2 border-red-600 backdrop-blur-xl mb-6">
                             <span className="text-red-500 font-black text-sm md:text-3xl tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
                                 Registrations Closed
                             </span>
+                        </div>
+
+                        {/* Event Ends Countdown */}
+                        <div className="relative mt-2 flex flex-col items-center">
+                            <span className="text-xs font-black text-white uppercase tracking-[0.3em] mb-4 italic flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                                Event Ends In
+                                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                            </span>
+                            <Countdown />
                         </div>
                     </motion.div>
 
